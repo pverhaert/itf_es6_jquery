@@ -233,8 +233,11 @@ gulp.task('minify', () => {
                     minifyCSS: true, // minify inline CSS
                 },
                 minifyJS: {
-                    sourceMap: true,
+                    // sourceMap: false,
                     module: true,
+                    compress: {
+                        unused: false,
+                    },
                 },
                 minifyCSS: true,
             })
