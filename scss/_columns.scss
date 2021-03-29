@@ -1,0 +1,21 @@
+// info: https://www.w3schools.com/css/css3_multiple_columns.asp
+// https://caniuse.com/multicolumn
+@mixin column($nr) {
+    $width: 960px / $nr;
+    padding: $universal-padding;
+    margin: $universal-margin;
+    columns: $width $nr;
+    column-rule: 1px solid $border-color;
+    border: 1px solid $border-color;
+}
+
+@for $i from 2 through 10 {
+    .columns-#{$i} {
+        @include column($i);
+
+        &-center {
+            @include column($i);
+            text-align: center;
+        }
+    }
+}

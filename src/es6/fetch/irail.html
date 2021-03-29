@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Belgian railway schedules</title>
+        <style>
+            #preloader {
+                display: flex;
+            }
+            #timetable div span:first-child {
+                font-family: monospace;
+            }
+            #timetable div span:nth-child(2) {
+                display: inline-block;
+                font-family: monospace;
+                width: 35px;
+                text-align: center;
+                font-weight: bold;
+                color: darkred;
+            }
+            #timetable div span:nth-child(3) {
+                display: inline-block;
+                width: 30px;
+                text-align: center;
+                margin: 0 0.5rem;
+                background-color: darkslategray;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="es6"></tmk-navbar>
+        <main class="container">
+            <h1>Belgian railway schedules <small>promises</small></h1>
+            <div id="preloader">
+                <div class="spinner tertiary"></div>
+                <p>loading...</p>
+            </div>
+            <div id="buttons"></div>
+            <h3 id="station"></h3>
+            <div id="timetable"></div>
+            <hr />
+            <pre data-src="irail.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../js/app.js"></script>
+        <script src="irail.js"></script>
+    </body>
+</html>

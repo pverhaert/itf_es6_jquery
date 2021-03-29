@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/course.css" />
+        <title>Document Object Model (DOM)</title>
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <style>
+            pre {
+                height: 4rem;
+            }
+            #domCode {
+                font-size: 0.8rem;
+                border: 0.0625rem solid var(--secondary-border-color);
+                background-color: var(--secondary-back-color);
+                margin: 1rem 0;
+            }
+            .outline {
+                outline: 1px solid lightcoral;
+                outline-offset: 0.1rem;
+                box-shadow: inset 0 0 0 2000px rgba(232, 238, 144, 0.4);
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="es6"></tmk-navbar>
+        <main class="container">
+            <h1 class="secondary">querySelectorAll()</h1>
+            <p>Open the developer console to see the result</p>
+            <fieldset>
+                <legend>Select inside section</legend>
+                <div class="col-sm-12 col-md-6">
+                    <label for="selector">selector</label>
+                    <input type="text" id="selector" placeholder="selector" />
+                </div>
+                <pre></pre>
+            </fieldset>
+            <section class="row" id="domCode">
+                <div class="col-sm-12 col-lg-6">
+                    <h3>Heading 3</h3>
+                    <p id="paragraph1">
+                        <b>paragraph 1</b>: Lorem <b>ipsum</b> dolor sit amet, <b>consectetur</b> adipiscing elit. In
+                        <b>commodo</b> elit at enim rhoncus nec accumsan quam tempus. Donec <b>porttitor</b> nibh ac
+                        arcu varius <b>ullamcorper</b>.
+                    </p>
+                    <ul>
+                        <li>
+                            Links
+                            <ul class="sublist">
+                                <li>
+                                    <a href="https://gulpjs.com/" title="Link to Gulpjs website">https://gulpjs.com/</a>
+                                </li>
+                                <li>
+                                    <a href="http://jquery.com/" target="abc" title="Link to jQuery website"
+                                        >http://jquery.com/</a
+                                    >
+                                </li>
+                                <li><a href="https://sass-lang.com/" target="abc">https://sass-lang.com/</a></li>
+                                <li><a href="https://www.thomasmore.be/">https://www.thomasmore.be/</a></li>
+                                <li><a href="../index.html" title="Link to homepage">homepage</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Fusce dapibus consectetur convallis. euismod a tortor.
+                            <ol class="sublist">
+                                <li>Donec aliquam magna quis tellus eleifend vehicula.</li>
+                                <li>Duis volutpat auctor lacus quis suscipit.</li>
+                            </ol>
+                        </li>
+                        <li>Nulla interdum aliquet libero</li>
+                    </ul>
+                    <p>
+                        <b>paragraph 2</b>: Quisque orci nibh, porttitor quis sagittis at, <b>bibendum</b> non ante.
+                        Praesent a massa in massa scelerisque rutrum sed a leo. Cras pulvinar, felis in elementum
+                        <b>consectetur</b>, ante ipsum consectetur felis, vitae tincidunt.
+                    </p>
+                    <p>
+                        <b>paragraph 3</b>: Donec vehicula sem vitae arcu malesuada ac ullamcorper mauris posuere.
+                        Integer tellus metus, volutpat id imperdiet quis, bibendum sed leo.
+                    </p>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <h3>Images</h3>
+                    <figure>
+                        <img src="https://picsum.photos/id/1015/100/100" alt="Image 1015" />
+                        <img src="https://picsum.photos/id/1016/100/100" alt="Image 1016" title="Image 1016" />
+                        <a href="https://picsum.photos/id/1018/100/100"
+                            ><img src="https://picsum.photos/id/1018/100/100" alt="Image 1018"
+                        /></a>
+                        <a href="https://picsum.photos/id/1028/100/100"
+                            ><img src="https://picsum.photos/id/1028/100/100" alt="Image 1028" title="Image 1028"
+                        /></a>
+
+                        <img src="https://picsum.photos/id/1039/100/100" alt="Image 1039" />
+                        <figcaption>
+                            Images from
+                            <a href="https://picsum.photos/images" target="_blank">https://picsum.photos/images</a>
+                        </figcaption>
+                    </figure>
+                    <h3>Form</h3>
+                    <form name="form1" id="form1" method="post" action="#!">
+                        <div>
+                            <label for="name">name:</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        <div>
+                            <label for="dis">Disabled input:</label>
+                            <input type="text" name="dis" id="dis" disabled />
+                        </div>
+                        <div>
+                            <label for="country">Country:</label>
+                            <select name="country" id="country">
+                                <option>Select a country</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                            </select>
+                        </div>
+                        <div class="row responsive-label">
+                            <label for="OS_0">Android</label>
+                            <input type="checkbox" name="OS" value="Android" id="OS_0" />
+                            <label for="OS_1">iOS</label>
+                            <input name="OS" type="checkbox" id="OS_1" value="iOS" checked />
+                            <label for="OS_2">Windows</label>
+                            <input type="checkbox" name="OS" value="Windows" id="OS_2" />
+                        </div>
+                        <div>
+                            <input class="tertiary" type="submit" name="submit" id="submit" value="Submit" />
+                            <input class="secondary" type="reset" name="reset" id="reset" value="Reset" />
+                            <input type="button" name="button1" id="button1" value="Button 1" />
+                            <button type="button" name="button2" id="button2" disabled>Button 2</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <h3>Table</h3>
+                    <table class="table">
+                        <caption>
+                            Table caption
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>Course:</th>
+                                <th>Date:</th>
+                                <th>Room:</th>
+                                <th>Remark:</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Web Basic</td>
+                                <td>16 October</td>
+                                <td>P306B</td>
+                                <td>4 days</td>
+                                <td>
+                                    <a href="https://itf-web-essentials.netlify.app/"
+                                        >https://itf-web-essentials.netlify.app/</a
+                                    >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Web Advanced</td>
+                                <td>5 November</td>
+                                <td>D101</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Laravel</td>
+                                <td>11 december</td>
+                                <td>B202</td>
+                                <td>2 days</td>
+                                <td>
+                                    <a href="https://itf-laravel.netlify.app/" target="_blank"
+                                        >https://itf-laravel.netlify.app/</a
+                                    >
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../js/app.js"></script>
+        <script src="querySelector.js"></script>
+    </body>
+</html>

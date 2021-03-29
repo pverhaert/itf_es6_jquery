@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Three traversal</title>
+        <style>
+            #start span {
+                color: red;
+            }
+
+            .selected {
+                background-color: rgba(136, 255, 0, 0.3);
+                outline: 1px solid #447510;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="jq"></tmk-navbar>
+        <main class="container">
+            <h1>Three traversal</h1>
+            <div class="border-gray">
+                <label for="travers">Examples:</label>
+                <select name="travers" id="travers">
+                    <option>$('#start').addClass('selected')</option>
+                    <optgroup label="ancestors (up)">
+                        <option>$('#start').parent().addClass('selected')</option>
+                        <option>$('#start').parent().parent().addClass('selected')</option>
+                        <option>$('#start').parents().addClass('selected')</option>
+                        <option>$('#start').closest('div').addClass('selected')</option>
+                    </optgroup>
+                    <optgroup label="siblings (left)">
+                        <option>$('#start').prev().addBack().addClass('selected')</option>
+                        <option>$('#start').prevAll().addClass('selected')</option>
+                        <option>$('#start').prevAll().addBack().addClass('selected')</option>
+                        <option>$('#start').prevAll('#second').addClass('selected')</option>
+                        <option>$('#start').prevAll('li:nth-child(odd)').addClass('selected')</option>
+                        <option>$('#start').prevUntil('li:first-child').addClass('selected')</option>
+                    </optgroup>
+                    <optgroup label="siblings (right)">
+                        <option>$('#start').next().addClass('selected')</option>
+                        <option>$('#start').next().addBack().addClass('selected')</option>
+                        <option>$('#start').nextAll().addClass('selected')</option>
+                        <option>$('#start').nextAll().addBack().addClass('selected')</option>
+                        <option>$('#start').nextAll('li:nth-child(odd)').addClass('selected')</option>
+                        <option>$('#start').nextUntil('li:last-child').addClass('selected')</option>
+                    </optgroup>
+                    <optgroup label="siblings (left and right)">
+                        <option>$('#start').siblings().addClass('selected')</option>
+                        <option>$('#start').siblings('li:nth-child(odd)').addBack().addClass('selected')</option>
+                    </optgroup>
+                    <optgroup label="descendants (down)">
+                        <option>$('#start').children().addClass('selected')</option>
+                        <option>$('#start').children('span').addClass('selected')</option>
+                        <option>$('#start').find('b').addClass('selected')</option>
+                        <option>$('#start').find('b, span').addClass('selected')</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, <b>consectetur adipisicing</b> elit. Inventore, voluptas.</li>
+                    <li>Architecto, culpa eveniet. Earum illum magni maiores quia saepe voluptate!</li>
+                    <li>
+                        Lorem <b>ipsum dolor</b> sit amet.
+                        <ul>
+                            <li id="first">Lorem ipsum dolor sit amet.</li>
+                            <li id="second">Commodi corporis hic nesciunt recusandae.</li>
+                            <li>Dolore doloremque eligendi impedit quisquam!</li>
+                            <li id="start">
+                                List item with <span>id="start"</span>
+                                <ol>
+                                    <li>Lorem <b>ipsum dolor</b>.</li>
+                                    <li>Blanditiis, cum, quos!</li>
+                                    <li>Ab expedita, voluptate.</li>
+                                </ol>
+                            </li>
+                            <li>Blanditiis dignissimos ea eaque rerum!</li>
+                            <li>Deserunt eum repellat repellendus voluptas.</li>
+                            <li>Accusamus autem dolore est reprehenderit.</li>
+                            <li>Distinctio eos exercitationem inventore saepe</b>!</li>
+                        </ul>
+                    </li>
+                    <li>Accusamus autem dolore est ipsa quasi quibusdam quisquam quo reprehenderit.</li>
+                    <li>Distinctio eos exercitationem inventore nihil, <b>nostrum quae quam repudiandae saepe</b>!</li>
+                    <li>Dolore doloremque eligendi impedit, maxime molestiae perspiciatis! Dolores, in quisquam!</li>
+                </ul>
+            </div>
+
+            <hr />
+            <pre data-src="tree_traversal.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../js/app.js"></script>
+        <script src="../../js/jquery.min.js"></script>
+        <script src="tree_traversal.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+@mixin border($color, $bgcolor) {
+  background: $bgcolor;
+  color: $form-fore-color;
+  border: 1px solid $color;
+  border-radius: $universal-border-radius;
+  margin: $universal-margin;
+  padding: (2 * $universal-padding) $universal-padding;
+}
+
+.border-gray {
+  @include border(#ddd, #f0f0f0);
+}
+
+.border-red {
+  @include border(#b32121, rgba(179, 33, 33, .05));
+}
+
+.border-green {
+  @include border(#21b34a, rgba(33, 179, 74, .05));
+}
+
+.border-blue {
+  @include border(#2157b3, rgb(33, 87, 179, .05));
+}

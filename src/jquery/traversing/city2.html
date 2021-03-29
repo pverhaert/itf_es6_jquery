@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Filter city list</title>
+    </head>
+    <body>
+        <tmk-navbar active="jq"></tmk-navbar>
+        <main class="container">
+            <h1>Filter city list <small>version 2</small></h1>
+            <div class="border-gray">
+                <input type="text" placeholder="City" id="filter" name="filter" />
+                <label for="filter"></label>
+            </div>
+            <div class="columns-5" id="cityList">
+                <ul>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Aalst_%28Oost-Vlaanderen%29"
+                            title="Aalst (Oost-Vlaanderen)"
+                            >Aalst</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Aalter" title="Aalter">Aalter</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Aarschot" title="Aarschot">Aarschot</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Aartselaar" title="Aartselaar">Aartselaar</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Affligem" title="Affligem">Affligem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Alken_%28gemeente%29" title="Alken (gemeente)">Alken</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Alveringem" title="Alveringem">Alveringem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Antwerpen_%28stad%29" title="Antwerpen (stad)"
+                            >Antwerpen</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Anzegem" title="Anzegem">Anzegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ardooie" title="Ardooie">Ardooie</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Arendonk" title="Arendonk">Arendonk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/As_%28Belgi%C3%AB%29" title="As (België)">As</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Asse_%28Vlaams-Brabant%29" title="Asse (Vlaams-Brabant)"
+                            >Asse</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Assenede" title="Assenede">Assenede</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Avelgem" title="Avelgem">Avelgem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Baarle-Hertog" title="Baarle-Hertog">Baarle-Hertog</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Balen_%28Vlaanderen%29" title="Balen (Vlaanderen)"
+                            >Balen</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Beernem" title="Beernem">Beernem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Beerse" title="Beerse">Beerse</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Beersel" title="Beersel">Beersel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Begijnendijk" title="Begijnendijk">Begijnendijk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bekkevoort" title="Bekkevoort">Bekkevoort</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Beringen_%28Belgi%C3%AB%29" title="Beringen (België)"
+                            >Beringen</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Berlaar" title="Berlaar">Berlaar</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Berlare" title="Berlare">Berlare</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bertem" title="Bertem">Bertem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Bever_%28Belgi%C3%AB%29" title="Bever (België)">Bever</a>
+                    </li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Beveren_%28Oost-Vlaanderen%29"
+                            title="Beveren (Oost-Vlaanderen)"
+                            >Beveren</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bierbeek" title="Bierbeek">Bierbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bilzen" title="Bilzen">Bilzen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Blankenberge" title="Blankenberge">Blankenberge</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Bocholt_%28Belgi%C3%AB%29" title="Bocholt (België)"
+                            >Bocholt</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Boechout" title="Boechout">Boechout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bonheiden" title="Bonheiden">Bonheiden</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Boom_%28Belgi%C3%AB%29" title="Boom (België)">Boom</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Boortmeerbeek" title="Boortmeerbeek">Boortmeerbeek</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Borgloon" title="Borgloon">Borgloon</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bornem" title="Bornem">Bornem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Borsbeek" title="Borsbeek">Borsbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Boutersem" title="Boutersem">Boutersem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Brakel_%28Belgi%C3%AB%29" title="Brakel (België)"
+                            >Brakel</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Brasschaat" title="Brasschaat">Brasschaat</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Brecht_%28plaats%29" title="Brecht (plaats)">Brecht</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bredene" title="Bredene">Bredene</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Bree_%28stad%29" title="Bree (stad)">Bree</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Brugge" title="Brugge">Brugge</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Buggenhout" title="Buggenhout">Buggenhout</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Damme_%28Belgi%C3%AB%29" title="Damme (België)">Damme</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/De_Haan" title="De Haan">De Haan</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/De_Panne" title="De Panne">De Panne</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/De_Pinte" title="De Pinte">De Pinte</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Deerlijk" title="Deerlijk">Deerlijk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Deinze" title="Deinze">Deinze</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Denderleeuw" title="Denderleeuw">Denderleeuw</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Dendermonde" title="Dendermonde">Dendermonde</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Dentergem" title="Dentergem">Dentergem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Dessel" title="Dessel">Dessel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Destelbergen" title="Destelbergen">Destelbergen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Diepenbeek" title="Diepenbeek">Diepenbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Diest" title="Diest">Diest</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Diksmuide" title="Diksmuide">Diksmuide</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Dilbeek" title="Dilbeek">Dilbeek</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Dilsen-Stokkem" title="Dilsen-Stokkem">Dilsen-Stokkem</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Drogenbos" title="Drogenbos">Drogenbos</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Duffel" title="Duffel">Duffel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Edegem" title="Edegem">Edegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Eeklo" title="Eeklo">Eeklo</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Erpe-Mere" title="Erpe-Mere">Erpe-Mere</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Essen_%28Belgi%C3%AB%29" title="Essen (België)">Essen</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Evergem" title="Evergem">Evergem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Galmaarden" title="Galmaarden">Galmaarden</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Gavere" title="Gavere">Gavere</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Geel_%28stad%29" title="Geel (stad)">Geel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Geetbets" title="Geetbets">Geetbets</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Genk" title="Genk">Genk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Gent" title="Gent">Gent</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Geraardsbergen" title="Geraardsbergen">Geraardsbergen</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Gingelom" title="Gingelom">Gingelom</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Gistel" title="Gistel">Gistel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Glabbeek" title="Glabbeek">Glabbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Gooik" title="Gooik">Gooik</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Grimbergen" title="Grimbergen">Grimbergen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Grobbendonk" title="Grobbendonk">Grobbendonk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Haacht" title="Haacht">Haacht</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Haaltert" title="Haaltert">Haaltert</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Halen_%28Belgi%C3%AB%29" title="Halen (België)">Halen</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Halle_%28Vlaams-Brabant%29" title="Halle (Vlaams-Brabant)"
+                            >Halle</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ham_%28Belgi%C3%AB%29" title="Ham (België)">Ham</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Hamme_%28Oost-Vlaanderen%29"
+                            title="Hamme (Oost-Vlaanderen)"
+                            >Hamme</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hamont-Achel" title="Hamont-Achel">Hamont-Achel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Harelbeke" title="Harelbeke">Harelbeke</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Hasselt_%28Belgi%C3%AB%29" title="Hasselt (België)"
+                            >Hasselt</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Hechtel-Eksel" title="Hechtel-Eksel">Hechtel-Eksel</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Heers_%28Belgi%C3%AB%29" title="Heers (België)">Heers</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Heist-op-den-Berg" title="Heist-op-den-Berg"
+                            >Heist-op-den-Berg</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hemiksem" title="Hemiksem">Hemiksem</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Herent_%28Vlaams-Brabant%29"
+                            title="Herent (Vlaams-Brabant)"
+                            >Herent</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Herentals" title="Herentals">Herentals</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Herenthout" title="Herenthout">Herenthout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Herk-de-Stad" title="Herk-de-Stad">Herk-de-Stad</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Herne_%28Belgi%C3%AB%29" title="Herne (België)">Herne</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Herselt" title="Herselt">Herselt</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Herstappe" title="Herstappe">Herstappe</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Herzele_%28Oost-Vlaanderen%29"
+                            title="Herzele (Oost-Vlaanderen)"
+                            >Herzele</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Heusden-Zolder" title="Heusden-Zolder">Heusden-Zolder</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Heuvelland_%28gemeente%29" title="Heuvelland (gemeente)"
+                            >Heuvelland</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Hoegaarden_%28gemeente%29" title="Hoegaarden (gemeente)"
+                            >Hoegaarden</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hoeilaart" title="Hoeilaart">Hoeilaart</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hoeselt" title="Hoeselt">Hoeselt</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Holsbeek" title="Holsbeek">Holsbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hooglede" title="Hooglede">Hooglede</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Hoogstraten_%28stad%29" title="Hoogstraten (stad)"
+                            >Hoogstraten</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Horebeke" title="Horebeke">Horebeke</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Houthalen-Helchteren" title="Houthalen-Helchteren"
+                            >Houthalen-Helchteren</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Houthulst" title="Houthulst">Houthulst</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Hove_%28Antwerpen%29" title="Hove (Antwerpen)">Hove</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Huldenberg" title="Huldenberg">Huldenberg</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Hulshout" title="Hulshout">Hulshout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ichtegem" title="Ichtegem">Ichtegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ieper" title="Ieper">Ieper</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ingelmunster" title="Ingelmunster">Ingelmunster</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Izegem" title="Izegem">Izegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Jabbeke" title="Jabbeke">Jabbeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kalmthout" title="Kalmthout">Kalmthout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kampenhout" title="Kampenhout">Kampenhout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kapellen" title="Kapellen">Kapellen</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Kapelle-op-den-Bos" title="Kapelle-op-den-Bos"
+                            >Kapelle-op-den-Bos</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kaprijke" title="Kaprijke">Kaprijke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kasterlee" title="Kasterlee">Kasterlee</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Keerbergen" title="Keerbergen">Keerbergen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kinrooi" title="Kinrooi">Kinrooi</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kluisbergen" title="Kluisbergen">Kluisbergen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Knesselare" title="Knesselare">Knesselare</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Knokke-Heist" title="Knokke-Heist">Knokke-Heist</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Koekelare" title="Koekelare">Koekelare</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Koksijde" title="Koksijde">Koksijde</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kontich" title="Kontich">Kontich</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kortemark" title="Kortemark">Kortemark</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kortenaken" title="Kortenaken">Kortenaken</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kortenberg" title="Kortenberg">Kortenberg</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kortessem" title="Kortessem">Kortessem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kortrijk" title="Kortrijk">Kortrijk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kraainem" title="Kraainem">Kraainem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kruibeke" title="Kruibeke">Kruibeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kruishoutem" title="Kruishoutem">Kruishoutem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Kuurne" title="Kuurne">Kuurne</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Laakdal" title="Laakdal">Laakdal</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Laarne" title="Laarne">Laarne</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lanaken" title="Lanaken">Lanaken</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Landen_%28Belgi%C3%AB%29" title="Landen (België)"
+                            >Landen</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Langemark-Poelkapelle" title="Langemark-Poelkapelle"
+                            >Langemark-Poelkapelle</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lebbeke" title="Lebbeke">Lebbeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lede" title="Lede">Lede</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ledegem" title="Ledegem">Ledegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lendelede" title="Lendelede">Lendelede</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lennik" title="Lennik">Lennik</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Leopoldsburg" title="Leopoldsburg">Leopoldsburg</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Leuven" title="Leuven">Leuven</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lichtervelde" title="Lichtervelde">Lichtervelde</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Liedekerke" title="Liedekerke">Liedekerke</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Lier_%28Belgi%C3%AB%29" title="Lier (België)">Lier</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lierde" title="Lierde">Lierde</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Lille_%28Belgi%C3%AB%29" title="Lille (België)">Lille</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Linkebeek" title="Linkebeek">Linkebeek</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Lint_%28Antwerpen%29" title="Lint (Antwerpen)">Lint</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Linter" title="Linter">Linter</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lochristi" title="Lochristi">Lochristi</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lokeren" title="Lokeren">Lokeren</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lommel" title="Lommel">Lommel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Londerzeel" title="Londerzeel">Londerzeel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lo-Reninge" title="Lo-Reninge">Lo-Reninge</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lovendegem" title="Lovendegem">Lovendegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lubbeek" title="Lubbeek">Lubbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Lummen" title="Lummen">Lummen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Maarkedal" title="Maarkedal">Maarkedal</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Maaseik" title="Maaseik">Maaseik</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Maasmechelen" title="Maasmechelen">Maasmechelen</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Machelen_%28Vlaams-Brabant%29"
+                            title="Machelen (Vlaams-Brabant)"
+                            >Machelen</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Maldegem" title="Maldegem">Maldegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Malle" title="Malle">Malle</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Mechelen_%28Belgi%C3%AB%29" title="Mechelen (België)"
+                            >Mechelen</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Meerhout_%28gemeente%29" title="Meerhout (gemeente)"
+                            >Meerhout</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Meeuwen-Gruitrode" title="Meeuwen-Gruitrode"
+                            >Meeuwen-Gruitrode</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Meise" title="Meise">Meise</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Melle_%28Belgi%C3%AB%29" title="Melle (België)">Melle</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Menen" title="Menen">Menen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Merchtem" title="Merchtem">Merchtem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Merelbeke" title="Merelbeke">Merelbeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Merksplas" title="Merksplas">Merksplas</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Mesen" title="Mesen">Mesen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Meulebeke" title="Meulebeke">Meulebeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Middelkerke" title="Middelkerke">Middelkerke</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Moerbeke_%28Waasland%29" title="Moerbeke (Waasland)"
+                            >Moerbeke</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Mol_%28Belgi%C3%AB%29" title="Mol (België)">Mol</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Moorslede" title="Moorslede">Moorslede</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Mortsel" title="Mortsel">Mortsel</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Nazareth_%28Belgi%C3%AB%29" title="Nazareth (België)"
+                            >Nazareth</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Neerpelt_%28gemeente%29" title="Neerpelt (gemeente)"
+                            >Neerpelt</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Nevele" title="Nevele">Nevele</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Niel_%28Belgi%C3%AB%29" title="Niel (België)">Niel</a>
+                    </li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Nieuwerkerken_%28Limburg%29"
+                            title="Nieuwerkerken (Limburg)"
+                            >Nieuwerkerken</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Nieuwpoort_%28Belgi%C3%AB%29" title="Nieuwpoort (België)"
+                            >Nieuwpoort</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Nijlen" title="Nijlen">Nijlen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ninove" title="Ninove">Ninove</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Olen_%28Belgi%C3%AB%29" title="Olen (België)">Olen</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oostende" title="Oostende">Oostende</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oosterzele" title="Oosterzele">Oosterzele</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oostkamp" title="Oostkamp">Oostkamp</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oostrozebeke" title="Oostrozebeke">Oostrozebeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Opglabbeek" title="Opglabbeek">Opglabbeek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Opwijk" title="Opwijk">Opwijk</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oudenaarde" title="Oudenaarde">Oudenaarde</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oudenburg" title="Oudenburg">Oudenburg</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oud-Heverlee" title="Oud-Heverlee">Oud-Heverlee</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Oud-Turnhout" title="Oud-Turnhout">Oud-Turnhout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Overijse" title="Overijse">Overijse</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Overpelt" title="Overpelt">Overpelt</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Peer_%28Belgi%C3%AB%29" title="Peer (België)">Peer</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Pepingen" title="Pepingen">Pepingen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Pittem" title="Pittem">Pittem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Poperinge" title="Poperinge">Poperinge</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Putte_%28Belgische_gemeente%29"
+                            title="Putte (Belgische gemeente)"
+                            >Putte</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Puurs" title="Puurs">Puurs</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Ranst_%28gemeente%29" title="Ranst (gemeente)">Ranst</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ravels" title="Ravels">Ravels</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Retie" title="Retie">Retie</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Riemst" title="Riemst">Riemst</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Rijkevorsel" title="Rijkevorsel">Rijkevorsel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Roeselare" title="Roeselare">Roeselare</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ronse" title="Ronse">Ronse</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Roosdaal" title="Roosdaal">Roosdaal</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Rotselaar" title="Rotselaar">Rotselaar</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Ruiselede" title="Ruiselede">Ruiselede</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Rumst" title="Rumst">Rumst</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Schelle_%28Belgi%C3%AB%29" title="Schelle (België)"
+                            >Schelle</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Scherpenheuvel-Zichem" title="Scherpenheuvel-Zichem"
+                            >Scherpenheuvel-Zichem</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Schilde" title="Schilde">Schilde</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Schoten_%28Belgi%C3%AB%29" title="Schoten (België)"
+                            >Schoten</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Sint-Amands" title="Sint-Amands">Sint-Amands</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Genesius-Rode" title="Sint-Genesius-Rode"
+                            >Sint-Genesius-Rode</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Gillis-Waas" title="Sint-Gillis-Waas"
+                            >Sint-Gillis-Waas</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Katelijne-Waver" title="Sint-Katelijne-Waver"
+                            >Sint-Katelijne-Waver</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Laureins" title="Sint-Laureins">Sint-Laureins</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Lievens-Houtem" title="Sint-Lievens-Houtem"
+                            >Sint-Lievens-Houtem</a
+                        >
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Martens-Latem" title="Sint-Martens-Latem"
+                            >Sint-Martens-Latem</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Sint-Niklaas" title="Sint-Niklaas">Sint-Niklaas</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Sint-Pieters-Leeuw" title="Sint-Pieters-Leeuw"
+                            >Sint-Pieters-Leeuw</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Sint-Truiden" title="Sint-Truiden">Sint-Truiden</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Spiere-Helkijn" title="Spiere-Helkijn">Spiere-Helkijn</a>
+                    </li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Stabroek_%28Belgi%C3%AB%29" title="Stabroek (België)"
+                            >Stabroek</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Staden" title="Staden">Staden</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Steenokkerzeel" title="Steenokkerzeel">Steenokkerzeel</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Stekene" title="Stekene">Stekene</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Temse" title="Temse">Temse</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Ternat_%28Vlaams-Brabant%29"
+                            title="Ternat (Vlaams-Brabant)"
+                            >Ternat</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tervuren" title="Tervuren">Tervuren</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tessenderlo" title="Tessenderlo">Tessenderlo</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tielt" title="Tielt">Tielt</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tielt-Winge" title="Tielt-Winge">Tielt-Winge</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tienen" title="Tienen">Tienen</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Tongeren_%28Belgi%C3%AB%29" title="Tongeren (België)"
+                            >Tongeren</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Torhout" title="Torhout">Torhout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Tremelo" title="Tremelo">Tremelo</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Turnhout" title="Turnhout">Turnhout</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Veurne" title="Veurne">Veurne</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Vilvoorde" title="Vilvoorde">Vilvoorde</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Vleteren_%28West-Vlaanderen%29"
+                            title="Vleteren (West-Vlaanderen)"
+                            >Vleteren</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Voeren" title="Voeren">Voeren</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Vorselaar" title="Vorselaar">Vorselaar</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Vosselaar" title="Vosselaar">Vosselaar</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Waarschoot" title="Waarschoot">Waarschoot</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Waasmunster" title="Waasmunster">Waasmunster</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wachtebeke" title="Wachtebeke">Wachtebeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Waregem" title="Waregem">Waregem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Wellen_%28Belgi%C3%AB%29" title="Wellen (België)"
+                            >Wellen</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wemmel" title="Wemmel">Wemmel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wervik" title="Wervik">Wervik</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Westerlo" title="Westerlo">Westerlo</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wetteren" title="Wetteren">Wetteren</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wevelgem" title="Wevelgem">Wevelgem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Wezembeek-Oppem" title="Wezembeek-Oppem"
+                            >Wezembeek-Oppem</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wichelen" title="Wichelen">Wichelen</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wielsbeke" title="Wielsbeke">Wielsbeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wijnegem" title="Wijnegem">Wijnegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Willebroek" title="Willebroek">Willebroek</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wingene" title="Wingene">Wingene</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wommelgem" title="Wommelgem">Wommelgem</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Wortegem-Petegem" title="Wortegem-Petegem"
+                            >Wortegem-Petegem</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Wuustwezel" title="Wuustwezel">Wuustwezel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zandhoven" title="Zandhoven">Zandhoven</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Zaventem_%28gemeente%29" title="Zaventem (gemeente)"
+                            >Zaventem</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zedelgem" title="Zedelgem">Zedelgem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zele" title="Zele">Zele</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zelzate" title="Zelzate">Zelzate</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zemst" title="Zemst">Zemst</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zingem" title="Zingem">Zingem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zoersel" title="Zoersel">Zoersel</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zomergem" title="Zomergem">Zomergem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zonhoven" title="Zonhoven">Zonhoven</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zonnebeke" title="Zonnebeke">Zonnebeke</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zottegem" title="Zottegem">Zottegem</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zoutleeuw" title="Zoutleeuw">Zoutleeuw</a></li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zuienkerke" title="Zuienkerke">Zuienkerke</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Zulte_%28Oost-Vlaanderen%29"
+                            title="Zulte (Oost-Vlaanderen)"
+                            >Zulte</a
+                        >
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zutendaal" title="Zutendaal">Zutendaal</a></li>
+                    <li>
+                        <a href="http://nl.wikipedia.org/wiki/Zwalm_%28gemeente%29" title="Zwalm (gemeente)">Zwalm</a>
+                    </li>
+                    <li><a href="http://nl.wikipedia.org/wiki/Zwevegem" title="Zwevegem">Zwevegem</a></li>
+                    <li>
+                        <a
+                            href="http://nl.wikipedia.org/wiki/Zwijndrecht_%28Belgi%C3%AB%29"
+                            title="Zwijndrecht (België)"
+                            >Zwijndrecht</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="city2.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../js/app.js"></script>
+        <script src="../../js/jquery.min.js"></script>
+        <script src="city2.js"></script>
+    </body>
+</html>

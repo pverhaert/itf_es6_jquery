@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Fetch movie info</title>
+    </head>
+    <body>
+        <tmk-navbar active="es6"></tmk-navbar>
+        <main class="container">
+            <h1>Fetch movie info <small>with async/await</small></h1>
+            <form>
+                <input type="hidden" name="apikey" value="f361da5e" />
+                <div class="row responsive-label">
+                    <div class="col-sm-12 col-md-2"><label for="title" class="doc">Title</label></div>
+                    <div class="col-sm-12 col-md">
+                        <input type="text" placeholder="Title" id="title" name="t" value="Pulp fiction" required />
+                    </div>
+                </div>
+                <div class="row responsive-label">
+                    <div class="col-sm-12 col-md-2"><label for="year">Year</label></div>
+                    <div class="col-sm-12 col-md">
+                        <input type="number" placeholder="Year" id="year" name="y" />
+                    </div>
+                </div>
+                <div class="row responsive-label">
+                    <div class="col-sm-12 col-md-2"><label for="plot">Plot</label></div>
+                    <div class="col-sm-12 col-md">
+                        <select id="plot" name="plot">
+                            <option value="short">short</option>
+                            <option value="full">full</option>
+                        </select>
+                        <button type="submit" class="primary">Search</button>
+                    </div>
+                </div>
+            </form>
+            <hr />
+            <div class="spinner tertiary"></div>
+            <div class="row" id="movieContainer"></div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+            </div>
+            <hr />
+            <pre data-src="omdb.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../js/app.js"></script>
+        <script src="omdb.js"></script>
+    </body>
+</html>

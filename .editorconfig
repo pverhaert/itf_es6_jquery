@@ -1,0 +1,20 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 140
+tab_width = 4
+
+[*.{scss, css, json, eslintrc, prettierrc, composer.lock}]
+indent_size = 2
+
+[*.js]
+ij_javascript_use_double_quotes = false
+
+[*.html]
+ij_html_do_not_indent_children_of_tags = thead, tbody, tfoot
+ij_html_space_inside_empty_tag = true

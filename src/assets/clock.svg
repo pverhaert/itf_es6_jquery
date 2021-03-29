@@ -1,0 +1,14 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="150" r="146" fill="#a5d8d4" stroke="#528393" stroke-width="4" />
+    <circle cx="150" cy="20" r="4" fill="#528393" />
+    <circle cx="20" cy="150" r="4" fill="#528393" />
+    <circle cx="150" cy="280" r="4" fill="#528393" />
+    <circle cx="280" cy="150" r="4" fill="#528393" />
+    <!-- digital clock -->
+    <text id="digitalTime" x="50%" y="30%" text-anchor="middle" fill="#528393">06:15:00</text>
+    <!-- analog clock -->
+    <line id="hour" x1="150" y1="60" x2="150" y2="170" stroke="brown" stroke-width="9" transform="rotate(187.5, 150,150)" />
+    <line id="min" x1="150" y1="20" x2="150" y2="180" stroke="brown" stroke-width="7" transform="rotate(90, 150,150)" />
+    <line id="sec" x1="150" y1="20" x2="150" y2="190" stroke="black" />
+    <circle cx="150" cy="150" r="8" fill="brown" />
+</svg>

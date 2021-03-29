@@ -1,0 +1,29 @@
+@use 'sass:color';
+
+$bg-color: #f0f0f0;
+
+header {
+    border-bottom: none;
+    text-align: center;
+
+    .button {
+        //text-transform: unset;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            background-color: color.adjust($bg-color, $lightness: -10%);
+            color: black;
+        }
+    }
+
+    .active {
+        background-color: $bg-color;
+        color: black;
+        font-weight: bold;
+    }
+
+    + hr {
+        margin: 0;
+    }
+}
