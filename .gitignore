@@ -3,6 +3,5 @@
 .idea
 node_modules
 dist
-src/css
 solutions
 package-lock.json
