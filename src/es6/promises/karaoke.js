@@ -7,7 +7,7 @@ const heroes = {
     line5: '<p><span>5</span> We can be heroes, just for one day</p>',
 };
 
-const delay = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms = 2000) => new Promise((resolve) => setTimeout(resolve, ms));
 
 lyrics.innerHTML += '<p>--- START --------------------------------------------</p>';
 delay()
