@@ -10,7 +10,7 @@ diceButton.addEventListener('click', function (e) {
         caption += `${roll} + `;
         dices += `<img src="/assets/dices/dice${roll}.svg" alt="dice ${roll}">`;
     }
-    // remove last 2 characters from the sting and add the sum
+    // remove last 2 characters from the string and add the sum
     caption = `${caption.slice(0, -2)} = ${sum}`;
     document.querySelector('main figure').innerHTML = `${dices}<figcaption><h4>${caption}</h4></figcaption>`;
 });

@@ -1,4 +1,4 @@
-// xax left position of #block: screen width - with of the block
+// max left position of #block: screen width - width of the block
 let maxLeftPosition = window.innerWidth - 50;
 let maxTopPosition = window.innerHeight - 50;
 

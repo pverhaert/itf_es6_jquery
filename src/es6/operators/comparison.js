@@ -7,7 +7,6 @@ const example = `Comparison operators:
 x1 == x2    => ${x1 == x2}
 x1 === x2   => ${x1 === x2}
 x1 !== y    => ${x1 !== y}
-!(x1 === y) => ${!(x1 === y)}
 x1 < y      => ${x1 < y}
 x1 > y      => ${x1 > y}`;
 
