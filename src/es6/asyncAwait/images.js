@@ -1,16 +1,6 @@
 const url = 'https://my-json-server.typicode.com/pverhaert/itf-api/picsum';
 const spinner = document.querySelector('.spinner');
 
-async function fetchImages() {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`An error has occurred: ${response.status}  ${response.statusText}`); // check for errors
-    }
-    const images = await response.json();
-    updatePage(images);
-    spinner.classList.add('hidden');
-}
-
 function updatePage(images) {
     images.forEach((image) => {
         document.getElementById('imgContainer').innerHTML += `
@@ -26,7 +16,17 @@ function updatePage(images) {
     });
 }
 
-fetchImages().catch((error) => {
+async function fetchImages() {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`An error has occurred: ${response.status}  ${response.statusText}`); // check for errors
+        }
+        const images = await response.json();
+        updatePage(images);
+    } catch (error) {
+        console.error(error);
+    }
     spinner.classList.add('hidden');
-    console.log(error);
-});
+}
+fetchImages();

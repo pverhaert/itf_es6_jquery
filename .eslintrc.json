@@ -23,6 +23,7 @@
     "arrow-body-style": "warn",
     "no-unused-vars": "warn",
     "no-undef": "warn",
+    "no-unused-expressions": ["error", { "allowTernary": true }],
     "prefer-destructuring": "off",
     "no-use-before-define": "off",
     "no-restricted-globals": "off",

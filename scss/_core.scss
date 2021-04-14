@@ -1,25 +1,24 @@
-
 h1 {
-  small {
-    display: inline-block;
-    font-size: 1rem;
-    margin-left: 1rem;
-  }
+    small {
+        display: inline-block;
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
 }
 
 main {
-  min-height: calc(100vh - 10rem);
+    min-height: calc(100vh - 10rem);
 }
 
-pre[data-src]{
-  border: none;
-  margin: .5rem;
+pre[data-src] {
+    border: none;
+    margin: 0.5rem;
 }
 
 img {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-table:not(.horizontal)  {
-  max-height: none;
+table:not(.horizontal) {
+    max-height: none;
 }

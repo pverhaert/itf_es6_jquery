@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>International Space Station tracker</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+        <style>
+            #map {
+                border: 1px solid #000;
+                height: 50vh;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>International Space Station tracker <small>Async/Await</small></h1>
+            <h3 class="text-danger">Preview with custom icon</h3>
+            <div id="info" class="border-green"></div>
+            <div id="map" class="border-green"></div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+        <script>
+            const _0x9a0d = [
+                'update',
+                'addTo',
+                '&lat=',
+                'unknown',
+                'marker',
+                'log',
+                '1wBkBJn',
+                'Belgium',
+                'address',
+                'longitude',
+                '334418PDmgAO',
+                'toFixed',
+                'lng',
+                'getZoom',
+                'lat',
+                '<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<b>Country</b>:\x20',
+                '\x0a\x20\x20\x20\x20\x20\x20\x20\x20<b>Latitude</b>:\x20',
+                'tileLayer',
+                'map',
+                'update\x20info',
+                '266999CRndic',
+                'setLatLng',
+                'https://api.wheretheiss.at/v1/satellites/25544',
+                'json',
+                '1280GPqeRX',
+                '299828yfUoCd',
+                'icon',
+                'https://nominatim.openstreetmap.org/reverse?format=json',
+                '\x0a\x20\x20\x20\x20',
+                '239895wFaMTU',
+                '3cDxVHF',
+                'info',
+                '167975THVOok',
+                'zoom',
+                '510535orOGla',
+                'country',
+                'innerHTML',
+                '377ElAafk',
+            ];
+            const _0xd027 = function (_0x17c737, _0x311c7d) {
+                _0x17c737 = _0x17c737 - 0x119;
+                let _0x9a0d4 = _0x9a0d[_0x17c737];
+                return _0x9a0d4;
+            };
+            const _0xbbb350 = _0xd027;
+            (function (_0x14427a, _0x24d054) {
+                const _0x205072 = _0xd027;
+                while (!![]) {
+                    try {
+                        const _0x11fe4a =
+                            parseInt(_0x205072(0x127)) +
+                            parseInt(_0x205072(0x120)) +
+                            parseInt(_0x205072(0x124)) +
+                            -parseInt(_0x205072(0x11f)) * parseInt(_0x205072(0x12c)) +
+                            parseInt(_0x205072(0x137)) +
+                            -parseInt(_0x205072(0x129)) * -parseInt(_0x205072(0x133)) +
+                            parseInt(_0x205072(0x11b)) * -parseInt(_0x205072(0x125));
+                        if (_0x11fe4a === _0x24d054) break;
+                        else _0x14427a['push'](_0x14427a['shift']());
+                    } catch (_0x148440) {
+                        _0x14427a['push'](_0x14427a['shift']());
+                    }
+                }
+            })(_0x9a0d, 0x41b26);
+            const _0x4800b3 = _0xbbb350(0x11d),
+                _0x3c550b = _0xbbb350(0x122),
+                _0x58258e = { lat: 51.16095, lng: 4.96166, zoom: 0x3, country: _0xbbb350(0x134) },
+                _0x245a82 = L[_0xbbb350(0x121)]({ iconUrl: '/assets/rocket.png', iconSize: [0x22, 0x40], iconAnchor: [0x11, 0x20] }),
+                _0x135fc9 = L[_0xbbb350(0x119)]('map')['setView']([0x0, 0x0], _0x58258e[_0xbbb350(0x128)]),
+                _0x12094f = L[_0xbbb350(0x131)]([0x0, 0x0], { icon: _0x245a82 })[_0xbbb350(0x12e)](_0x135fc9);
+            L[_0xbbb350(0x13e)]('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy;\x20<a\x20href=\x22https://www.openstreetmap.org/copyright\x22>OpenStreetMap</a>\x20contributors',
+            })['addTo'](_0x135fc9);
+
+            function _0xa94afe() {
+                const _0x14be1b = _0xbbb350;
+                console[_0x14be1b(0x132)](_0x14be1b(0x12d)),
+                    _0x12094f[_0x14be1b(0x11c)]([_0x58258e[_0x14be1b(0x13b)], _0x58258e['lng']]),
+                    _0x135fc9['setView']([_0x58258e['lat'], _0x58258e[_0x14be1b(0x139)]], _0x135fc9[_0x14be1b(0x13a)]());
+            }
+
+            _0xa94afe();
+
+            function _0x653e45() {
+                const _0x5a9e37 = _0xbbb350;
+                console[_0x5a9e37(0x132)](_0x5a9e37(0x11a)),
+                    (document['getElementById'](_0x5a9e37(0x126))[_0x5a9e37(0x12b)] =
+                        _0x5a9e37(0x13d) +
+                        _0x58258e[_0x5a9e37(0x13b)][_0x5a9e37(0x138)](0x6) +
+                        '<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<b>Longitude</b>:\x20' +
+                        _0x58258e['lng'][_0x5a9e37(0x138)](0x6) +
+                        _0x5a9e37(0x13c) +
+                        _0x58258e[_0x5a9e37(0x12a)] +
+                        _0x5a9e37(0x123));
+            }
+
+            async function _0x1d196c() {
+                const _0x26e259 = _0xbbb350;
+                let _0x5b9b68 = await fetch(_0x4800b3),
+                    _0x46eb6c = await _0x5b9b68[_0x26e259(0x11e)]();
+                (_0x58258e[_0x26e259(0x13b)] = _0x46eb6c['latitude']),
+                    (_0x58258e['lng'] = _0x46eb6c[_0x26e259(0x136)]),
+                    _0xa94afe(),
+                    (_0x5b9b68 = await fetch(
+                        _0x3c550b + _0x26e259(0x12f) + _0x58258e[_0x26e259(0x13b)] + '&lon=' + _0x58258e[_0x26e259(0x139)]
+                    )),
+                    (_0x46eb6c = await _0x5b9b68[_0x26e259(0x11e)]()),
+                    _0x46eb6c[_0x26e259(0x135)]
+                        ? (_0x58258e[_0x26e259(0x12a)] = _0x46eb6c[_0x26e259(0x135)]['country'])
+                        : (_0x58258e[_0x26e259(0x12a)] = _0x26e259(0x130)),
+                    console[_0x26e259(0x132)](_0x46eb6c),
+                    _0x653e45();
+            }
+
+            _0x1d196c(), setInterval(_0x1d196c, 0x1388);
+        </script>
+    </body>
+</html>

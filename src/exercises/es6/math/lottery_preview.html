@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Lottery</title>
+        <style>
+            .ball {
+                display: inline-block;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                background-color: white;
+                border: 3px solid red;
+                border-radius: 50%;
+                margin: 0 0.5rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Lottery</h1>
+            <div class="border-green">
+                <div id="ballcontainer">
+                    <div class="ball">1</div>
+                    <div class="ball">2</div>
+                    <div class="ball">3</div>
+                    <div class="ball">4</div>
+                    <div class="ball">5</div>
+                    <div class="ball">6</div>
+                </div>
+                <div>
+                    <button type="button" id="drawBallsButton" class="primary">Draw balls</button>
+                </div>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script>
+            const _0x13c8 = [
+                '#ballcontainer\x20>\x20.ball',
+                '761610cNwtZt',
+                'addEventListener',
+                'floor',
+                'drawBallsButton',
+                '1118362djNxMg',
+                'getElementById',
+                '1vIhjTJ',
+                '822XAhexs',
+                'random',
+                '125633owlMTP',
+                '1260744HkXwxw',
+                '377439LyTRdD',
+                '3iEeufo',
+                'innerHTML',
+                '301sCXFzC',
+                '2267dEunJV',
+            ];
+            const _0x2c30 = function (_0xc2ae3f, _0x483a34) {
+                _0xc2ae3f = _0xc2ae3f - 0xb4;
+                let _0x13c80e = _0x13c8[_0xc2ae3f];
+                return _0x13c80e;
+            };
+            const _0x26c73d = _0x2c30;
+            (function (_0x1dc4e0, _0x211f22) {
+                const _0x26c463 = _0x2c30;
+                while (!![]) {
+                    try {
+                        const _0x406849 =
+                            -parseInt(_0x26c463(0xbf)) +
+                            -parseInt(_0x26c463(0xbd)) * -parseInt(_0x26c463(0xba)) +
+                            -parseInt(_0x26c463(0xb4)) +
+                            parseInt(_0x26c463(0xbe)) +
+                            parseInt(_0x26c463(0xc2)) * -parseInt(_0x26c463(0xc3)) +
+                            parseInt(_0x26c463(0xb8)) +
+                            -parseInt(_0x26c463(0xbb)) * parseInt(_0x26c463(0xc0));
+                        if (_0x406849 === _0x211f22) break;
+                        else _0x1dc4e0['push'](_0x1dc4e0['shift']());
+                    } catch (_0x27a5d3) {
+                        _0x1dc4e0['push'](_0x1dc4e0['shift']());
+                    }
+                }
+            })(_0x13c8, 0xa6399);
+            const _0x47b7ab = 0x2d,
+                _0x442ee6 = document['querySelectorAll'](_0x26c73d(0xc4));
+            document[_0x26c73d(0xb9)](_0x26c73d(0xb7))[_0x26c73d(0xb5)]('click', (_0x42caa4) => {
+                const _0x43a2b5 = _0x26c73d;
+                for (let _0x24fbf8 = 0x0; _0x24fbf8 <= _0x442ee6['length'] - 0x1; _0x24fbf8++) {
+                    _0x442ee6[_0x24fbf8][_0x43a2b5(0xc1)] = Math[_0x43a2b5(0xb6)](Math[_0x43a2b5(0xbc)]() * _0x47b7ab + 0x1);
+                }
+            });
+        </script>
+    </body>
+</html>

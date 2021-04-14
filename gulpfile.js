@@ -237,7 +237,11 @@ gulp.task('minify', () => {
                     module: true,
                     compress: {
                         unused: false,
+                        keep_classnames: /StoreTabs/i,
                     },
+                    // mangle: true,
+                    // keep_fnames: false,
+                    // keep_classnames: true,
                 },
                 minifyCSS: true,
             })
@@ -246,5 +250,6 @@ gulp.task('minify', () => {
 });
 
 gulp.task('build:pwa', gulp.series('clean', 'copy', 'generate-favicon', 'inject-favicon-markup', 'concatSW', 'service-worker', 'minify'));
-gulp.task('build', gulp.series('clean', 'copy', 'generate-favicon', 'inject-favicon-markup', 'minify'));
+// gulp.task('build', gulp.series('clean', 'copy', 'generate-favicon', 'inject-favicon-markup', 'minify'));
+gulp.task('build', gulp.series('clean', 'copy', 'minify'));
 gulp.task('default', gulp.series('copy-js', 'sass', 'browser-sync'));

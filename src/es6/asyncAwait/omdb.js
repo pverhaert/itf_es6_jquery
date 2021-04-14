@@ -2,12 +2,7 @@ const omdbapi = 'https://www.omdbapi.com/';
 const spinner = document.querySelector('.spinner');
 const form = document.querySelector('form');
 
-async function fetchMovie(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`An error has occurred: ${response.status}  ${response.statusText}`); // check for errors
-    }
-    const movie = await response.json();
+function updatePage(movie) {
     // info if movie not found
     let info = `
           <div class="card warning full-width">
@@ -31,21 +26,27 @@ async function fetchMovie(url) {
             </div>`;
     }
     document.getElementById('movieContainer').innerHTML = info;
-    // hide the spinner
+}
+
+async function fetchMovie(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`An error has occurred: ${response.status}  ${response.statusText}`); // check for errors
+        }
+        const movie = await response.json();
+        updatePage(movie);
+    } catch (error) {
+        console.error(error);
+    }
     spinner.classList.add('hidden');
 }
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    // get all field data from the form
     const data = new FormData(form);
-    // convert data to a query string
     const queryString = new URLSearchParams(data).toString();
-    // console.log(queryString);
-    // fetch data from OMDb
-    fetchMovie(`${omdbapi}?${queryString}`).catch((error) => {
-        spinner.classList.add('hidden');
-        console.log(error);
-    });
+    spinner.classList.remove('hidden');
+    fetchMovie(`${omdbapi}?${queryString}`);
 });
 form.dispatchEvent(new Event('submit'));

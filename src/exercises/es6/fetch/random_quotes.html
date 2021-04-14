@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Random quotes</title>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Random quotes <small>Fetch API</small></h1>
+            <div id="result"></div>
+            <div class="border-gray">
+                <ul>
+                    <li>Show 5 random quotes from <a href="https://goquotes.docs.apiary.io/">https://goquotes.docs.apiary.io/</a></li>
+                    <li>
+                        Example:
+                        <a href="https://goquotes-api.herokuapp.com/api/v1/random?count=5"
+                            >https://goquotes-api.herokuapp.com/api/v1/random?count=5</a
+                        >
+                    </li>
+                    <li>Display each quote in a <code>blockquote</code> tag</li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="random_quotes.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="random_quotes.js"></script>
+    </body>
+</html>

@@ -7,16 +7,13 @@ const myLocation = {
     lng: 4.99088,
 };
 
-// get current position
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
         (position) => {
-            // update myLocation
             myLocation.lat = position.coords.latitude;
             myLocation.lng = position.coords.longitude;
-            // fetch all Belgian railway stations
             fetchStations().catch((error) => {
-                preloader.classList.add('hidden');
+                hidePreloader();
                 console.log(error);
             });
         },
@@ -32,48 +29,41 @@ if (navigator.geolocation) {
     alert('Geolocation is not supported by this browser');
 }
 
+function hidePreloader(state = true, message = '') {
+    state ? (preloader.style.visibility = 'hidden') : (preloader.style.visibility = 'visible');
+    preloader.querySelector('p').textContent = message;
+}
+
 async function fetchStations() {
-    preloader.style.visibility = 'visible';
-    preloader.querySelector('p').textContent = 'Loading stations ...';
-    // fetch all Belgian railway stations
+    hidePreloader(false, 'Loading stations ...');
     const response = await fetch(stationsUrl);
     if (!response.ok) {
         throw new Error(`An error has occurred: ${response.status}  ${response.statusText}`); // check for errors
     }
     let stations = await response.json();
-    // add distance between your location and the station location
     stations = stationDistance(stations);
-    // order railway stations by distance from your location and get the five closest railway stations
     stations = stations.sort((a, b) => a.distance - b.distance).slice(0, 5);
     console.table(stations);
-    // add a button with an event listener for every station
     stationButtons(stations);
-    // trigger click event on first button
     buttons.querySelector('button:first-child').dispatchEvent(new Event('click'));
-    preloader.style.visibility = 'hidden';
+    hidePreloader();
 }
 
 async function fetchTimetable(id, station) {
-    preloader.style.visibility = 'visible';
-    preloader.querySelector('p').textContent = `Loading timetable for ${station}...`;
+    hidePreloader(false, `Loading timetable for ${station}...`);
     const liveboardUrl = `https://api.irail.be/liveboard/?id=${id}&format=json&lang=en`;
     const response = await fetch(liveboardUrl);
     const data = await response.json();
-    // we only need the departure[] containing the timetable
     let table = data.departures.departure;
-    // transform the timetable
     table = transformTimetable(table);
-    // build the timetable
     showTimetable(table);
-    preloader.style.visibility = 'hidden';
+    hidePreloader();
 }
 
 function stationDistance(stations) {
     return stations.station.map((st) => {
-        // convert lat and lng form string to number
         const lat = +st.locationY;
         const lng = +st.locationX;
-        // calculate the distance between your location and the station location as the crow flies (in km)
         const distance = calcCrow(lat, lng, myLocation.lat, myLocation.lng);
         return {
             lat,
@@ -89,12 +79,10 @@ function stationButtons(stations) {
     stations.forEach((station) => {
         buttons.innerHTML += `<button data-id="${station.id}">${station.name}</button>`;
     });
-    // add event listener to every button
     buttons.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', function (e) {
             const id = this.dataset.id;
             document.getElementById('station').textContent = this.textContent;
-            // get timetable from the clicked station
             fetchTimetable(id, this.textContent);
         });
     });
