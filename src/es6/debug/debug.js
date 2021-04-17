@@ -35,6 +35,6 @@ const users = [
     { name: 'John', surname: 'Doe', age: 23 },
     { name: 'Jane', surname: 'Doe', age: 41 },
 ];
-console.log(users);
+console.log('users', users);
 console.table(users);
 console.table(users, ['name', 'age']);

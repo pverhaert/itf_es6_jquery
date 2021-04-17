@@ -24,12 +24,12 @@ btnToggle.addEventListener('dblclick', function (e) {
     }
 });
 
-// when entering #secton2, rotate #section1 180 degrees
+// when entering #section2, rotate #section1 180 degrees
 section2.addEventListener('mouseenter', function (e) {
     section1.style.transform = 'rotateX(180deg)';
 });
 
-// when leaving #secton2, rotate #section1 back to 0 degrees
+// when leaving #section2, rotate #section1 back to 0 degrees
 section2.addEventListener('mouseleave', function (e) {
     section1.style.transform = 'rotateX(0)';
 });
