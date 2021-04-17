@@ -2,7 +2,7 @@
 const now = new Date();
 // get next Christmas
 const christmas = new Date(now.getFullYear(), 11, 25);
-// Set Christmas to next year if the current date is after Christmas but before New Year
+// set Christmas to next year if the current date is after Christmas but before New Year
 if (now.getMonth() === 11 && now.getDate() > 25) {
     christmas.setFullYear(christmas.getFullYear() + 1);
 }

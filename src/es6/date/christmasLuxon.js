@@ -3,7 +3,7 @@ const now = luxon.DateTime.now(); // also try luxon.DateTime.local(2021, 12, 26)
 // get next Christmas
 let christmas = luxon.DateTime.local(now.year, 12, 25);
 
-// Set Christmas to next year if the current date is after Christmas but before New Year
+// set Christmas to next year if the current date is after Christmas but before New Year
 if (now > christmas) christmas = christmas.plus({ years: 1 });
 
 // convert the difference in ms back to days
