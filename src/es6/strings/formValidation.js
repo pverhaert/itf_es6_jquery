@@ -22,7 +22,7 @@ form.addEventListener('submit', function (e) {
 
     // validate email
     const emailValue = email.value.trim();
-    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
     if (emailValue === '' || emailValue.match(emailPattern) === null) {
         errorMsg += `<li><b>Email</b> is required and must be a valid email address</li>`;
         email.classList.remove('is-valid');
