@@ -24,33 +24,3 @@ function updateIssMarker() {
     map.setView([iss.lat, iss.lng], map.getZoom());
 }
 updateIssMarker();
-
-/*function updateInfo() {
-    console.log('update info');
-    document.getElementById('info').innerHTML = `
-        <b>Latitude</b>: ${iss.lat.toFixed(6)}<br>
-        <b>Longitude</b>: ${iss.lng.toFixed(6)}<br>
-        <b>Country</b>: ${iss.country}
-    `;
-}
-
-async function fetchIss() {
-    let response = await fetch(issPositionUrl);
-    let data = await response.json();
-    // console.log(data);
-    iss.lat = data.latitude;
-    iss.lng = data.longitude;
-    updateIssMarker();
-    response = await fetch(`${reverseGeoUrl}&lat=${iss.lat}&lon=${iss.lng}`);
-    data = await response.json();
-    if (data.address) {
-        iss.country = data.address.country;
-    } else {
-        iss.country = 'unknown';
-    }
-    console.log(data);
-    updateInfo();
-}
-
-fetchIss();
-setInterval(fetchIss, 5000);*/

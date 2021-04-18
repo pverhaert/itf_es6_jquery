@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Even or odd?</title>
+        <style>
+            #numbers {
+                display: flex;
+            }
+            #numbers > div {
+                flex: 1 1 300px;
+            }
+            #numbers h4 {
+                text-align: center;
+            }
+            #numbers ul {
+                list-style: none;
+                columns: 3rem;
+                padding: 1rem;
+                text-align: center;
+                column-rule: 1px solid #aaa;
+                border-top: 1px solid #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Even or odd?</h1>
+            <div id="numbers">
+                <div class="border-green">
+                    <h4>Even</h4>
+                    <ul></ul>
+                </div>
+                <div class="border-red">
+                    <h4>Odd</h4>
+                    <ul></ul>
+                </div>
+                <div class="border-blue">
+                    <h4>Prime</h4>
+                    <ul></ul>
+                </div>
+            </div>
+            <hr />
+            <div class="border-gray">
+                <ul>
+                    <li>
+                        Step 1: loop from 1 to 100, check for each number if it's even or odd and create a new list item in the correct list
+                    </li>
+                    <li>
+                        Step 2: check if the number is a prime number (divisible only by the number 1 or itself) and put it in the third
+                        list
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="even_odd.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="even_odd.js"></script>
+    </body>
+</html>

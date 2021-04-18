@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Calculator</title>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Calculator</h1>
+            <div class="border-green">
+                <div>
+                    <input type="number" id="number1" value="6" />
+                    <input type="number" id="number2" value="2" />
+                    <div id="buttons">
+                        <button>Add</button>
+                        <button>Subtract</button>
+                        <button>Multiply</button>
+                        <button>Divide</button>
+                    </div>
+                    <p id="result">&nbsp;</p>
+                </div>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script>
+            const _0x8e04 = [
+                '188gbLczB',
+                'number2',
+                'click',
+                'result',
+                'addEventListener',
+                'querySelector',
+                '809323PnNcce',
+                '451526zHAwUN',
+                'value',
+                'getElementById',
+                '662377gIAfYD',
+                '1TMGzju',
+                '729iRnXgG',
+                'number1',
+                'innerText',
+                '130qpCyMY',
+                '1359pJstBc',
+                '4555cKcoCa',
+                '402142sicjWT',
+                '1357CtQfHj',
+                'button:nth-child(2)',
+                'button:nth-child(3)',
+            ];
+            const _0x11c0cb = _0x3e1a;
+            function _0x3e1a(_0x2b3ecf, _0x5ef5d4) {
+                _0x2b3ecf = _0x2b3ecf - 0xbf;
+                let _0x8e049c = _0x8e04[_0x2b3ecf];
+                return _0x8e049c;
+            }
+            (function (_0x136c7f, _0x24b01d) {
+                const _0x37fc03 = _0x3e1a;
+                while (!![]) {
+                    try {
+                        const _0x4178b9 =
+                            -parseInt(_0x37fc03(0xc7)) * parseInt(_0x37fc03(0xc8)) +
+                            -parseInt(_0x37fc03(0xcf)) +
+                            -parseInt(_0x37fc03(0xc4)) +
+                            -parseInt(_0x37fc03(0xc3)) +
+                            parseInt(_0x37fc03(0xcc)) * parseInt(_0x37fc03(0xc9)) +
+                            -parseInt(_0x37fc03(0xce)) * -parseInt(_0x37fc03(0xd3)) +
+                            parseInt(_0x37fc03(0xd0)) * parseInt(_0x37fc03(0xcd));
+                        if (_0x4178b9 === _0x24b01d) break;
+                        else _0x136c7f['push'](_0x136c7f['shift']());
+                    } catch (_0x55e09d) {
+                        _0x136c7f['push'](_0x136c7f['shift']());
+                    }
+                }
+            })(_0x8e04, 0x72b91);
+            const _0x1cb9ce = document['getElementById'](_0x11c0cb(0xca)),
+                _0x56acd6 = document[_0x11c0cb(0xc6)](_0x11c0cb(0xd4)),
+                _0x4ec304 = document[_0x11c0cb(0xc6)](_0x11c0cb(0xc0));
+            document[_0x11c0cb(0xc2)]('button:nth-child(1)')[_0x11c0cb(0xc1)](_0x11c0cb(0xbf), (_0x35131c) => {
+                const _0x29fc8d = _0x11c0cb;
+                _0x4ec304['innerText'] = +_0x1cb9ce['value'] + +_0x56acd6[_0x29fc8d(0xc5)];
+            }),
+                document[_0x11c0cb(0xc2)](_0x11c0cb(0xd1))[_0x11c0cb(0xc1)](_0x11c0cb(0xbf), (_0x2fc79e) => {
+                    const _0x20ab25 = _0x11c0cb;
+                    _0x4ec304[_0x20ab25(0xcb)] = +_0x1cb9ce[_0x20ab25(0xc5)] - +_0x56acd6[_0x20ab25(0xc5)];
+                }),
+                document[_0x11c0cb(0xc2)](_0x11c0cb(0xd2))['addEventListener'](_0x11c0cb(0xbf), (_0x400be1) => {
+                    const _0x4f4093 = _0x11c0cb;
+                    _0x4ec304[_0x4f4093(0xcb)] = +_0x1cb9ce[_0x4f4093(0xc5)] * +_0x56acd6[_0x4f4093(0xc5)];
+                }),
+                document[_0x11c0cb(0xc2)]('button:nth-child(4)')['addEventListener'](_0x11c0cb(0xbf), (_0x98dc83) => {
+                    const _0x28e0b5 = _0x11c0cb;
+                    _0x4ec304[_0x28e0b5(0xcb)] = +_0x1cb9ce[_0x28e0b5(0xc5)] / +_0x56acd6[_0x28e0b5(0xc5)];
+                });
+        </script>
+    </body>
+</html>
