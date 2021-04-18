@@ -11,7 +11,7 @@
         <tmk-navbar active="ex"></tmk-navbar>
         <main class="container">
             <h1>A soccer game <small>basic</small></h1>
-            <div class="border-gray">
+            <div class="border-green">
                 <table id="soccer">
                     <thead>
                         <tr>
@@ -24,19 +24,42 @@
             </div>
             <hr />
             <div class="border-gray">
-                <p>Reconstruct the score history of the soccer game 'Belgium' - 'Spain'</p>
+                <p>Reconstruct the score history of the soccer game 'Belgium vs Spain'</p>
                 <ul>
                     <li>
-                        Step 1: locate the <code>score</code> array, which is a listing of all goals made in the soccer game 'Belgium' -
-                        'Spain'
+                        Step 1: locate the <code>score</code> array, which is a listing of all goals made in the soccer game 'Belgium vs
+                        Spain'
                     </li>
                     <li>
-                        Step 2: add a new row to the <code>tbody</code> for each 'goal'. The first goal (from Belgium) will result in a
-                        <code>td</code> with value 1 for the Belgium column and a <code>td</code> with value 0 for the Spain column
+                        Step 2: add a new row to the <code>tbody</code> for each goal
+                        <ul>
+                            <li>
+                                The first goal (from Belgium) will result in a
+                                <code>td</code>
+                                with value 1 for the Belgium column and a
+                                <code>td</code>
+                                with value 0 for the Spain column
+                            </li>
+                            <li>
+                                The second goal (from Spain) will result in a
+                                <code>td</code>
+                                with value 1 for the Belgium column and a
+                                <code>td</code>
+                                with value 1 for the Spain column
+                            </li>
+                            <li>
+                                The third goal (from Spain) will result in a
+                                <code>td</code>
+                                with value 1 for the Belgium column and a
+                                <code>td</code>
+                                with value 2 for the Spain column
+                            </li>
+                            <li>...</li>
+                        </ul>
                     </li>
                     <li>
                         TIP: add a <code>data-label</code> attribute on every <code>td</code> to make the table responsive (see
-                        <a href="https://minicss.org/docs#tables">tables example code</a>)
+                        <a href="https://minicss.org/docs#tables">mini.css tables: example code</a>)
                     </li>
                 </ul>
             </div>
