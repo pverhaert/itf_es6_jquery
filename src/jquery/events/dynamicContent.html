@@ -7,14 +7,26 @@
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
         <title>Dynamic generated content</title>
         <style>
+            h4 {
+                font-family: 'Inconsolata', Menlo, Consolas, monospace;
+            }
+            .red {
+                color: coral;
+                font-weight: bold;
+            }
+            .blue {
+                color: dodgerblue;
+                font-weight: bold;
+            }
             section > span {
                 display: inline-block;
+                font-size: 1.5rem;
                 text-align: center;
                 width: 3rem;
                 line-height: 3rem;
                 border: 1px solid #000;
                 margin: 0.5rem;
-                background-color: darksalmon;
+                background-color: #ffa1a1;
                 cursor: pointer;
             }
 
@@ -27,11 +39,14 @@
         <tmk-navbar active="jq"></tmk-navbar>
         <main class="container">
             <h1>Dynamic generated content</h1>
+            <h4>$('<span class="red">#section1</span> <span class="blue">span</span>').on('click', function (e) {...})</h4>
             <section id="section1">
-                <span>10</span>
+                <span>&#128308;</span>
             </section>
+            <hr />
+            <h4>$('<span class="red">#section2</span>').on('click', <span class="blue">'span'</span>, function (e) {...})</h4>
             <section id="section2">
-                <span>20</span>
+                <span>&#128994;</span>
             </section>
             <hr />
             <pre data-src="dynamicContent.js"></pre>
