@@ -9,14 +9,3 @@ img1.css({
 console.log('height after changing the style', img1.height());
 console.log('innerHeight', img1.innerHeight());
 console.log('outerHeight', img1.outerHeight());
-
-window.addEventListener('copy', (event) => {
-    console.log('You are now connected to the network.');
-});
-$(window).on('copy', function (e) {
-    console.log('Copy from JQ');
-});
-
-$(window).click((e) => {
-    console.log('Copy from JQ 2');
-});
