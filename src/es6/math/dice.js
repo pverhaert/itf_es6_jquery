@@ -5,7 +5,7 @@ diceButton.addEventListener('click', function (e) {
     let caption = '';
     let sum = 0;
     for (let i = 0; i < 3; i++) {
-        const roll = Math.ceil(Math.random() * 6);
+        const roll = Math.floor(Math.random() * 6 + 1);
         sum += roll;
         caption += `${roll} + `;
         dices += `<img src="/assets/dices/dice${roll}.svg" alt="dice ${roll}">`;
