@@ -26,7 +26,7 @@ block.addEventListener('click', function () {
 });
 
 // add event listener on resizing the screen
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', function (e) {
     // recalculate maxLeftPosition and maxTopPosition
     maxLeftPosition = window.innerWidth - 50;
     maxTopPosition = window.innerHeight - 50;
