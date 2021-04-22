@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Effects</title>
+        <title>Effects (animations)</title>
         <style>
             figure {
                 margin: auto;
@@ -17,7 +17,7 @@
     <body>
         <tmk-navbar active="jq"></tmk-navbar>
         <main class="container">
-            <h1>Effects</h1>
+            <h1>Effects (animations)</h1>
             <div class="border-gray">
                 <label for="effects">Examples:</label>
                 <select name="effects" id="effects">
@@ -25,24 +25,32 @@
                     <optgroup label="hide/show">
                         <option>$('figure').hide()</option>
                         <option>$('figure').show()</option>
+                        <option>$('figure').hide('fast')</option>
+                        <option>$('figure').show('fast')</option>
                         <option>$('figure').hide('slow')</option>
                         <option>$('figure').show('slow')</option>
                         <option>$('figure').hide(2000)</option>
                         <option>$('figure').show(2000)</option>
+                        <option>$('figure').toggle(1000)</option>
                     </optgroup>
-                    <optgroup label="slideUp/slideDown">
+                    <optgroup label="slide">
                         <option>$('figure').slideUp()</option>
                         <option>$('figure').slideDown()</option>
+                        <option>$('figure').slideUp('fast')</option>
+                        <option>$('figure').slideDown('fast')</option>
                         <option>$('figure').slideUp('slow')</option>
                         <option>$('figure').slideDown('slow')</option>
                         <option>$('figure').slideUp(2000)</option>
                         <option>$('figure').slideDown(2000)</option>
+                        <option>$('figure').slideToggle(1000)</option>
                     </optgroup>
-                    <optgroup label="fadeOut/fadeIn">
+                    <optgroup label="fade">
                         <option>$('figure').fadeOut()</option>
                         <option>$('figure').fadeIn()</option>
+                        <option>$('figure').fadeOut('fast')</option>
+                        <option>$('figure').fadeIn('fast')</option>
                         <option>$('figure').fadeOut('slow')</option>
-                        <option>$('figure').fadeIn('slow')</option>
+                        <option>$('figure').fadeIn('slow')</opti
                         <option>$('figure').fadeOut(2000)</option>
                         <option>$('figure').fadeIn(2000)</option>
                     </optgroup>
@@ -56,11 +64,9 @@
             </div>
             <figure>
                 <img src="https://picsum.photos/id/106/600/400" alt="image" id="img" />
-                <!--                <div class="overlay"></div>-->
             </figure>
-
             <hr />
-            <pre data-src="effects.js"></pre>
+<!--            <pre data-src="effects.js"></pre>-->
         </main>
         <tmk-footer></tmk-footer>
         <script type="module" src="../../js/app.js"></script>
