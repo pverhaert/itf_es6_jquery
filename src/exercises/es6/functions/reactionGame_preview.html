@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Reaction game</title>
+        <style>
+            .blocks {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .blocks div {
+                height: 250px;
+                width: 250px;
+                border: 2px solid #ccc;
+                margin: 2rem;
+                line-height: 250px;
+                font-size: 5rem;
+                text-align: center;
+            }
+
+            .red {
+                background-color: red;
+            }
+
+            .green {
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Reaction game</h1>
+            <div class="border-green">
+                <div class="blocks">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="border-gray">
+                <p>Create a reaction game</p>
+                <ul>
+                    <li>
+                        Step 1: Use a timing function with a delay of 750ms to repeatedly generate a random number (1, 2 or 3) and add the
+                        <code>red</code> class to the corresponding block <br>
+                        (NOTE/TIP: the generated number/corresponding block must differ from the previous number/block, so generate a new
+                        random number until it differs from the previous one)
+                    </li>
+                    </li>
+                    <li>
+                        Step 2: Add a click event to all 3 blocks. If clicked when the block is red:
+                        <ul>
+                            <li>The block <i>temporarily<sup>*</sup></i> gets a green background color (TIP: class <code>green</code>)</li>
+                            <li>Your score is increased by 1 point, and this score is <i>temporarily<sup>*</sup></i> shown in the clicked
+                                block
+                            </li>
+                        </ul>
+                        <p><i><sup>*</sup> Make sure that the green background color and score is removed when a new red block is selected
+                            (Step 1)</i></p>
+                    </li>
+                    <li>
+                        Step 3: The game stops when you scored 5 points
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script>
+            const _0x1d79 = ["438784OyeSJT", "classList", "19509zqDGac", "click", "851444YtOhfs", "random", ".blocks\x20div:nth-child(", "contains", "8Xxsqmx", "34061ZiVImQ", "6yCHwAv", "red", "1055148bviLlk", "green", "3jPcAUr", "floor", "innerText", "remove", ".blocks\x20div", "284259Ogdmsk", "add", "forEach", "1509428YjXiRU", "querySelectorAll"];
+
+            function _0x4039(_0x17183e, _0x45df9f) {
+                _0x17183e = _0x17183e - 0x130;
+                let _0x1d79d1 = _0x1d79[_0x17183e];
+                return _0x1d79d1;
+            }
+
+            const _0x347023 = _0x4039;
+            (function(_0x1e2bc5, _0x2626ab) {
+                const _0x55005a = _0x4039;
+                while (!![]) {
+                    try {
+                        const _0x1134d9 = -parseInt(_0x55005a(0x147)) + -parseInt(_0x55005a(0x138)) * parseInt(_0x55005a(0x137)) + parseInt(_0x55005a(0x133)) + parseInt(_0x55005a(0x13b)) + -parseInt(_0x55005a(0x142)) * -parseInt(_0x55005a(0x13d)) + parseInt(_0x55005a(0x139)) * parseInt(_0x55005a(0x131)) + -parseInt(_0x55005a(0x145));
+                        if (_0x1134d9 === _0x2626ab) break; else _0x1e2bc5["push"](_0x1e2bc5["shift"]());
+                    } catch (_0x128176) {
+                        _0x1e2bc5["push"](_0x1e2bc5["shift"]());
+                    }
+                }
+            }(_0x1d79, 0xa016b));
+            const blocks = document[_0x347023(0x146)](_0x347023(0x141));
+            let points = 0x0, previousBlock = 0x0, currentBlock = 0x0;
+            const timer = setInterval(() => {
+                const _0x5b7c81 = _0x347023;
+                previousBlock = currentBlock;
+                while (previousBlock === currentBlock) {
+                    currentBlock = Math[_0x5b7c81(0x13e)](Math[_0x5b7c81(0x134)]() * 0x3 + 0x1);
+                }
+                blocks["forEach"](_0x13e827 => {
+                    const _0x518766 = _0x5b7c81;
+                    _0x13e827[_0x518766(0x130)][_0x518766(0x140)](_0x518766(0x13a), _0x518766(0x13c)), _0x13e827["innerText"] = "";
+                });
+                const _0x3bc53e = document["querySelector"](_0x5b7c81(0x135) + currentBlock + ")");
+                _0x3bc53e["classList"][_0x5b7c81(0x143)](_0x5b7c81(0x13a));
+            }, 0x2ee);
+            blocks[_0x347023(0x144)](_0x3ab502 => {
+                const _0x1d8940 = _0x347023;
+                _0x3ab502["addEventListener"](_0x1d8940(0x132), () => {
+                    const _0x2aaa2b = _0x1d8940;
+                    _0x3ab502["classList"][_0x2aaa2b(0x136)](_0x2aaa2b(0x13a)) && (_0x3ab502[_0x2aaa2b(0x130)][_0x2aaa2b(0x140)](_0x2aaa2b(0x13a)), _0x3ab502["classList"]["add"](_0x2aaa2b(0x13c)), _0x3ab502[_0x2aaa2b(0x13f)] = ++points), points === 0x5 && clearInterval(timer);
+                });
+            });
+        </script>
+    </body>
+</html>

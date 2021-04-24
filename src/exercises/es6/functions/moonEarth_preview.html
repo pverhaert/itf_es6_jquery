@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Moon and earth movement</title>
+        <style>
+            .border-green > div:first-child {
+                width: 180px;
+                background-color: #000;
+                padding: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            label {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Moon and earth movement</h1>
+            <div class="border-green">
+                <div>
+                    <img id="image" src="../../../assets/moonEarth/IMG00.gif" alt="moon-earth" />
+                </div>
+                <div>
+                    <label for="delay">Delay:</label>
+                    <input
+                        type="range"
+                        id="delay"
+                        name="delay"
+                        min="25"
+                        max="500"
+                        value="100"
+                        step="25"
+                        oninput="output.value =  delay.value"
+                    />
+                    <output id="output">100</output>
+                    ms
+                </div>
+            </div>
+            <div class="border-gray">
+                <p>
+                    Make a graphical simulation of the movement of moon and earth, based on a set of (hourly) images <i>IMG00.gif</i>,
+                    <i>IMG01.gif</i>, ..., <i>IMG23.gif</i>
+                </p>
+                <ul>
+                    <li>Define a variable <code>i</code> (which we will use to identify a specific image)</li>
+                    <li>
+                        Write a function <code>showNextImage()</code> which shows the next image (by increasing the variable
+                        <code>i</code>). After <i>IMG23.gif</i> is shown, we start again with <i>IMG00.gif</i>.
+                    </li>
+                    <li>
+                        Use a timing function that executes the function <code>showNextImage()</code> repeatedly with a delay of 100ms (=
+                        the initial value of the slider)
+                    </li>
+                    <li>
+                        When the range slider is changed, the simulation should continue with the new delay value <br />
+                        TIP: Use the <code>clearInterval()</code> method and restart the repeated execution of <code>showNextImage()</code>
+                        with the new delay value
+                    </li>
+                </ul>
+                <p>REMARK: Use arrow functions where possible!</p>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script>
+            const _0x445d = [
+                'src',
+                '1853VkDqJy',
+                '461aqGNKz',
+                '853323auaVbJ',
+                '2461389RZzREx',
+                '1228925eMhZzj',
+                'image',
+                '13DSVruL',
+                'getElementById',
+                'change',
+                '870888hVJmBZ',
+                'value',
+                '.gif',
+                '../../../assets/moonEarth/IMG',
+                '7409wfRDlg',
+                '4AERMlF',
+                '236923SstWMD',
+            ];
+            const _0x412fb6 = _0x2613;
+            (function (_0x6de649, _0x4d97f8) {
+                const _0x35662b = _0x2613;
+                while (!![]) {
+                    try {
+                        const _0x2a66c7 =
+                            parseInt(_0x35662b(0x168)) +
+                            -parseInt(_0x35662b(0x166)) +
+                            parseInt(_0x35662b(0x171)) * parseInt(_0x35662b(0x16a)) +
+                            -parseInt(_0x35662b(0x165)) * -parseInt(_0x35662b(0x164)) +
+                            parseInt(_0x35662b(0x16d)) +
+                            -parseInt(_0x35662b(0x172)) * -parseInt(_0x35662b(0x173)) +
+                            -parseInt(_0x35662b(0x167));
+                        if (_0x2a66c7 === _0x4d97f8) break;
+                        else _0x6de649['push'](_0x6de649['shift']());
+                    } catch (_0x40cbfc) {
+                        _0x6de649['push'](_0x6de649['shift']());
+                    }
+                }
+            })(_0x445d, 0xa6d4f);
+
+            function _0x2613(_0x2c4982, _0x5de069) {
+                _0x2c4982 = _0x2c4982 - 0x163;
+                let _0x445d88 = _0x445d[_0x2c4982];
+                return _0x445d88;
+            }
+
+            const image = document['getElementById'](_0x412fb6(0x169)),
+                delay = document[_0x412fb6(0x16b)]('delay');
+            let i = 0x0;
+            const showNextImage = () => {
+                const _0x769793 = _0x412fb6;
+                i = ++i % 0x18;
+                const _0x58c445 = i < 0xa ? '0' + i : '' + i;
+                image[_0x769793(0x163)] = _0x769793(0x170) + _0x58c445 + _0x769793(0x16f);
+            };
+            let tmr = setInterval(() => {
+                showNextImage();
+            }, delay[_0x412fb6(0x16e)]);
+            delay['addEventListener'](_0x412fb6(0x16c), (_0x4b32c7) => {
+                const _0x5a54de = _0x412fb6;
+                clearInterval(tmr),
+                    (tmr = setInterval(() => {
+                        showNextImage();
+                    }, delay[_0x5a54de(0x16e)]));
+            });
+        </script>
+    </body>
+</html>

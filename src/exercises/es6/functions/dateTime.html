@@ -13,9 +13,11 @@
                 margin: 0.5rem;
                 padding: 1rem;
             }
+
             #result div:first-of-type {
                 text-align: center;
             }
+
             #result figure {
                 display: flex;
             }
@@ -23,6 +25,7 @@
             #result figure img {
                 height: 50px;
             }
+
             [type='range'] {
                 width: calc(100% - 220px);
                 min-width: 200px;
@@ -49,33 +52,48 @@
                         <img id="s0" src="../../../assets/display/number4.svg" alt="" />
                         <img id="s1" src="../../../assets/display/number5.svg" alt="" />
                     </figure>
-                    <label for="extra">Simulate real time + <output id="output">0</output>h</label>
+                    <label for="extra"
+                        >Simulate real time +
+                        <output id="output">0</output>
+                        h</label
+                    >
                     <input type="range" min="0" max="23" value="0" id="extra" oninput="output.value =  extra.value" />
                 </div>
             </div>
             <div class="border-gray">
                 <p>
-                    Show a message and image according to the (simulated) time, i.e. the current time with the selected number of hours
-                    added
+                    Show a <b>message and image</b> according to the (simulated) time, i.e. the current time with the selected number of
+                    hours added
                 </p>
                 <ul>
                     <li>
-                        <b>Between 06:00:00 and &lt;= 10:00:00</b><br />
-                        Text: <i>Good morning</i> and image <i>/assets/dateTime/morning.png</i>
+                        Between 06:00:00 (included) and 10:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good morning</i><br /></li>
+                            <li>Image <i>/assets/dateTime/morning.png</i></li>
+                        </ul>
                     </li>
                     <li>
-                        <b>Between 10:00:00 and &lt;= 21:00:00</b><br />
-                        Text: <i>Good day</i> and image <i>/assets/dateTime/day.png</i>
+                        Between 10:00:00 (included) and 21:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good day</i><br /></li>
+                            <li>Image <i>/assets/dateTime/day.png</i></li>
+                        </ul>
                     </li>
                     <li>
-                        <b>else</b><br />
-                        Text: <i>Good night</i> and image <i>/assets/dateTime/night.png</i>
+                        Between 21:00:00 (included) and 06:00:00<br />
+                        <ul>
+                            <li>Text: <i>Good night</i><br /></li>
+                            <li>Image <i>/assets/dateTime/night.png</i></li>
+                        </ul>
                     </li>
                 </ul>
-                <h4>Optional:</h4>
-                <ul>
-                    <li>Show the (simulated) time on the display</li>
-                </ul>
+                <p>Show the <b>(simulated) time on the display</b> using the images <i>/assets/display/numberX.svg</i></p>
+                <p>
+                    TIP: If your default browser language is English, use
+                    <code>toLocaleTimeString('en-GB')</code> to easily convert the date/time to a HH:MM:SS format. For browsers in Dutch,
+                    <code>toLocaleTimeString()</code> (without arguments) should do the job.
+                </p>
             </div>
             <hr />
             <pre data-src="dateTime.js"></pre>
