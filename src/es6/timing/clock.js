@@ -1,4 +1,4 @@
-setInterval(function () {
+function clock() {
     const now = new Date();
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
@@ -14,4 +14,7 @@ setInterval(function () {
     document.getElementById('min').setAttribute('transform', `rotate(${minutes * 6}, 150, 150)`);
     // 1 hour (360/12 = 30 degrees) + .5 degrees for every minute (every 60 minutes an additional 30 degrees)
     document.getElementById('hour').setAttribute('transform', `rotate(${hours * 30 + minutes * 0.5}, 150, 150)`);
-}, 1000);
+}
+
+clock(); // start clock() immediately
+setInterval(clock, 1000); // run clock() every second
