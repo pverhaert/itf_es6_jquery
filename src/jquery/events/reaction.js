@@ -1,9 +1,11 @@
-// start the timer
-let timer = new Date();
 const block = $('#block');
+
 // max left position of #block: screen width - width of the block
 let maxLeftPosition = window.innerWidth - block.width();
 let maxTopPosition = window.innerHeight - block.height();
+
+// start the timer
+let timer = new Date();
 
 block.click((e) => {
     // calculate the time between block shown and block clicked
@@ -11,9 +13,9 @@ block.click((e) => {
     // hide the block
     block.hide();
     // move the block to a random position
-    const blokX = `${maxLeftPosition * Math.random()}px`;
-    const blokY = `${maxTopPosition * Math.random()}px`;
-    block.css({ top: blokY, left: blokX });
+    const blockX = `${maxLeftPosition * Math.random()}px`;
+    const blockY = `${maxTopPosition * Math.random()}px`;
+    block.css({ top: blockY, left: blockX });
     // wait between 2 and 5 seconds to show the block at the new position
     const waitTime = (Math.random() * 3 + 2) * 1000;
     setTimeout(() => {

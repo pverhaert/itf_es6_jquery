@@ -15,11 +15,11 @@ $('#filter')
         } else {
             // filter is not empty: first hide all cities
             $('#cityList li').hide();
-            // show the cities where the data-city attribute contains the filter value
+            // show the cities for which the data-city attribute contains the filter value
             $(`#cityList li[data-city*=${filter}]`).show();
         }
         // count only the visible cities
         const counter = $('#cityList li').filter(':visible').length;
         $('label[for=filter]').html(`<b>${counter}</b> cities visible`);
     })
-    .keyup(); // trigger the blur event when (re)loading the page
+    .keyup(); // trigger the keyup event when (re)loading the page
