@@ -19,7 +19,7 @@ $('#filter')
             $(`#cityList li[data-city*=${filter}]`).show();
         }
         // count only the visible cities
-        const counter = $('#cityList li').filter(':visible').length;
+        const counter = $('#cityList li:visible').length;
         $('label[for=filter]').html(`<b>${counter}</b> cities visible`);
     })
     .keyup(); // trigger the keyup event when (re)loading the page

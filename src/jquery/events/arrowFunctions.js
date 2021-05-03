@@ -1,6 +1,6 @@
 // jQuery
 $('#buttongroup1 button').click((e) => {
-    const val = e.target.textContent;
+    const val = $(e.target).text();
     $('pre:first-of-type').html(`You clicked on <b>${val}</b>`);
 });
 
