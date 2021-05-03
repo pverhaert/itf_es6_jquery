@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Basic DOM</title>
+        <style>
+            .green {
+                color: green;
+            }
+
+            .orange {
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Heading 1</h1>
+            <ol>
+                <li>Lorem ipsum dolor.</li>
+                <li>Make background of <code>h1</code> orange</li>
+                <li>Make color of <code>h1</code> green</li>
+                <li>
+                    <button type="button" class="primary">rotate h1 tag</button>
+                </li>
+            </ol>
+            <hr />
+            <div class="border-gray">
+                <ul>
+                    <li>
+                        Create <b>two embedded CSS classes</b>:
+                        <ul>
+                            <li>
+                                Class <code>.green</code> has a <code>color</code> of
+                                <code>green</code>
+                            </li>
+                            <li>Class <code>.orange</code> has a <code>background-color</code> of <code>orange</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Add some <b>event listeners</b> to the ordered list above:
+                        <ul>
+                            <li><b>Click on first list item</b>: copy the text form this list item to the <code>h1</code> tag</li>
+                            <li>
+                                <b>Mouse enters the second item</b>: add the class <code>.orange</code> to the <code>h1</code> tag<br />
+                                <b>Mouse leaves the second item</b>: remove the class <code>.orange</code> from the
+                                <code>h1</code> tag<br />
+                            </li>
+                            <li><b>Double-click the third item</b>: toggle the class <code>.green</code> to the <code>h1</code> tag</li>
+                            <li>
+                                <b>Click on the button inside the last item</b>: rotate the <code>h1</code> tag by 180 degrees<br />
+                                <b>Double-click the button</b>: rotate the <code>h1</code> tag back to 0 degrees<br />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="dom.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="dom.js"></script>
+    </body>
+</html>

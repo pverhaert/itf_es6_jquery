@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Change background color</title>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Change background color <small>advanced</small></h1>
+            <div>
+                <button type="button" class="primary">lightsalmon</button>
+                <button type="button" class="primary">palegreen</button>
+                <button type="button" class="primary">#49eae7</button>
+                <button type="button" class="secondary">reset</button>
+            </div>
+            <div class="border-gray">
+                <ul>
+                    <li>Add a click event listener to all the buttons above
+                        <ul>
+                            <li>Change the background color of this container (<code>div.border-gray</code>)</b> to the text/color on the
+                                button
+                            </li>
+                            <li>Click on the 'reset' button to set this container to its original state</li>
+                        </ul>
+                    </li>
+                    <li>Can you add some extra color buttons without touching the script?</li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="bgcolor_advanced.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="bgcolor_advanced.js"></script>
+    </body>
+</html>

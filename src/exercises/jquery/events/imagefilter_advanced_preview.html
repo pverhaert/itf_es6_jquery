@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Image filter</title>
+        <style>
+            main img {
+                cursor: pointer;
+            }
+
+            .sepia {
+                filter: sepia(100%);
+                opacity: 0.3;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Image filter <small>advanced</small></h1>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img src="https://picsum.photos/id/110/600/400" alt="Image 1" />
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img src="https://picsum.photos/id/98/600/400" alt="Image 2" />
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img src="https://picsum.photos/id/889/600/400" alt="Image 3" />
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <img src="https://picsum.photos/id/977/600/400" alt="Image 4" />
+                </div>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script>
+            const _0x2306 = [
+                'removeClass',
+                '1VnsCZU',
+                '1LDpihP',
+                '1uyUvbZ',
+                '720553TZGlWi',
+                '105613mJlIVM',
+                '7ZMCOxH',
+                'addClass',
+                '1405644ckmdjc',
+                'sepia',
+                '783493eUtBiN',
+                '4nsjtvl',
+                '134531PToLpy',
+                '966710KcKWmd',
+                '213293QkdmRZ',
+                'main\x20img',
+            ];
+            const _0x47dfe3 = _0x32d4;
+            (function (_0x3235b9, _0x521b5c) {
+                const _0x4e9fa8 = _0x32d4;
+                while (!![]) {
+                    try {
+                        const _0x3886f0 =
+                            parseInt(_0x4e9fa8(0x14a)) +
+                            parseInt(_0x4e9fa8(0x13f)) +
+                            parseInt(_0x4e9fa8(0x148)) * -parseInt(_0x4e9fa8(0x13e)) +
+                            -parseInt(_0x4e9fa8(0x13d)) * parseInt(_0x4e9fa8(0x147)) +
+                            parseInt(_0x4e9fa8(0x140)) * -parseInt(_0x4e9fa8(0x143)) +
+                            parseInt(_0x4e9fa8(0x146)) * parseInt(_0x4e9fa8(0x144)) +
+                            -parseInt(_0x4e9fa8(0x14c)) * parseInt(_0x4e9fa8(0x145));
+                        if (_0x3886f0 === _0x521b5c) break;
+                        else _0x3235b9['push'](_0x3235b9['shift']());
+                    } catch (_0x38aaa0) {
+                        _0x3235b9['push'](_0x3235b9['shift']());
+                    }
+                }
+            })(_0x2306, 0xb2b30);
+            const images = $(_0x47dfe3(0x141));
+
+            function _0x32d4(_0x5c336f, _0x338c03) {
+                _0x5c336f = _0x5c336f - 0x13d;
+                let _0x2306b9 = _0x2306[_0x5c336f];
+                return _0x2306b9;
+            }
+
+            images[_0x47dfe3(0x149)](_0x47dfe3(0x14b)),
+                images['click']((_0x11be39) => {
+                    const _0xe3073a = _0x47dfe3;
+                    images[_0xe3073a(0x149)](_0xe3073a(0x14b)), $(_0x11be39['target'])[_0xe3073a(0x142)](_0xe3073a(0x14b));
+                });
+        </script>
+    </body>
+</html>
