@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Traversing siblings</title>
+        <title>Traversing children end descendants</title>
         <style>
             select {
                 font-family: Menlo, Consolas, monospace;
@@ -38,34 +38,14 @@
     <body>
         <tmk-navbar active="jq"></tmk-navbar>
         <main class="container">
-            <h1>Traversing siblings</h1>
+            <h1>Traversing children end descendants</h1>
             <div class="border-gray">
                 <label for="travers">Examples:</label>
                 <select name="travers" id="travers">
-                    <optgroup label="left siblings">
-                        <option>.prev()</option>
-                        <option>.prev().addBack()</option>
-                        <option>.prevAll()</option>
-                        <option>.prevAll().addBack()</option>
-                        <option>.prevAll(':nth-child(2)')</option>
-                        <option>.prevAll(':nth-child(odd)')</option>
-                        <option>.prevUntil(':first-child')</option>
-                    </optgroup>
-                    <optgroup label="right siblings">
-                        <option>.next()</option>
-                        <option>.next().addBack()</option>
-                        <option>.nextAll()</option>
-                        <option>.nextAll().addBack()</option>
-                        <option>.nextAll(':nth-child(8)')</option>
-                        <option>.nextAll(':nth-child(odd)')</option>
-                        <option>.nextUntil(':last-child')</option>
-                    </optgroup>
-                    <optgroup label="left and right siblings">
-                        <option>.siblings()</option>
-                        <option>.siblings(':nth-child(odd)')</option>
-                        <option>.siblings(':nth-child(even)')</option>
-                        <option>.siblings(':nth-child(even)').addBack()</option>
-                    </optgroup>
+                    <option>.find('span')</option>
+                    <option>.find('b, span')</option>
+                    <option>.children()</option>
+                    <option>.children('span')</option>
                 </select>
             </div>
             <hr />
@@ -92,7 +72,7 @@
             $('#travers')
                 .change(function () {
                     $('*').removeClass('selected');
-                    const code = `$('#start')${$(this).find(':selected').text()}.addClass('selected');`;
+                    const code = `$('.border-green')${$(this).find(':selected').text()}.addClass('selected');`;
                     document.getElementById('result').textContent = code;
                     eval(code);
                 })

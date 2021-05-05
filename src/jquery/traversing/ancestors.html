@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Traversing siblings</title>
+        <title>Traversing parent and ancestors</title>
         <style>
             select {
                 font-family: Menlo, Consolas, monospace;
@@ -38,34 +38,22 @@
     <body>
         <tmk-navbar active="jq"></tmk-navbar>
         <main class="container">
-            <h1>Traversing siblings</h1>
+            <h1>Traversing parent and ancestors</h1>
             <div class="border-gray">
                 <label for="travers">Examples:</label>
                 <select name="travers" id="travers">
-                    <optgroup label="left siblings">
-                        <option>.prev()</option>
-                        <option>.prev().addBack()</option>
-                        <option>.prevAll()</option>
-                        <option>.prevAll().addBack()</option>
-                        <option>.prevAll(':nth-child(2)')</option>
-                        <option>.prevAll(':nth-child(odd)')</option>
-                        <option>.prevUntil(':first-child')</option>
-                    </optgroup>
-                    <optgroup label="right siblings">
-                        <option>.next()</option>
-                        <option>.next().addBack()</option>
-                        <option>.nextAll()</option>
-                        <option>.nextAll().addBack()</option>
-                        <option>.nextAll(':nth-child(8)')</option>
-                        <option>.nextAll(':nth-child(odd)')</option>
-                        <option>.nextUntil(':last-child')</option>
-                    </optgroup>
-                    <optgroup label="left and right siblings">
-                        <option>.siblings()</option>
-                        <option>.siblings(':nth-child(odd)')</option>
-                        <option>.siblings(':nth-child(even)')</option>
-                        <option>.siblings(':nth-child(even)').addBack()</option>
-                    </optgroup>
+                    <option>.closest('div')</option>
+                    <option>.closest('section')</option>
+                    <option>.closest('article')</option>
+                    <option>.closest('article').addBack()</option>
+                    <option>.closest('.border-green')</option>
+                    <option>.closest('.border-green').addBack()</option>
+                    <option>.parent()</option>
+                    <option>.parent().addBack()</option>
+                    <option>.parent().parent()</option>
+                    <option>.parents()</option>
+                    <option>.parents('div')</option>
+                    <option>.parents('div').addBack()</option>
                 </select>
             </div>
             <hr />

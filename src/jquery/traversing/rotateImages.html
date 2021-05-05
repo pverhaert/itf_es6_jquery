@@ -7,8 +7,12 @@
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
         <title>Rotate images</title>
         <style>
+            label {
+                display: inline-block;
+                width: 150px;
+            }
             [type='range'] {
-                width: calc(100vw - 220px);
+                width: calc(100vw - 300px);
             }
             figure {
                 display: flex;
@@ -26,12 +30,10 @@
         <main class="container">
             <h1>Rotate images <small>(traversing)</small></h1>
             <div class="border-gray">
-                <label for="rotate">Rotate:</label>
+                <label for="rotate">Rotate <output id="outputRotate">0</output>deg:</label>
                 <input type="range" id="rotate" name="rotate" min="-180" max="180" value="0" oninput="outputRotate.value =  rotate.value" />
-                <output id="outputRotate">0</output>deg
-                <label for="shadow">Shadow:</label>
+                <label for="shadow">Shadow on img <output id="outputShadow">1</output>:</label>
                 <input type="range" id="shadow" name="shadow" min="1" max="6" value="1" oninput="outputShadow.value =  shadow.value" />
-                img <output id="outputShadow">1</output>
                 <figure>
                     <img src="https://picsum.photos/id/425/200/200" alt="Image 1" />
                     <img src="https://picsum.photos/id/441/200/200" alt="Image 2" />
