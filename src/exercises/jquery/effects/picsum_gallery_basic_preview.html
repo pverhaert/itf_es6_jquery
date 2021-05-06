@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Picsum photo gallery (basic)</title>
+        <style>
+            #polaroid {
+                background-color: black;
+                border: 1rem solid #fff;
+                border-bottom: 5rem solid #fff;
+                outline: 2px solid #000;
+                width: 600px;
+                height: 600px;
+            }
+
+            p {
+                width: 632px;
+                text-align: center;
+                margin: 2rem 0;
+            }
+
+            #picsumId {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Picsum photo gallery (basic)</h1>
+            <div id="polaroid">
+                <img src="https://picsum.photos/id/25/600/600" alt="1" />
+            </div>
+            <p>
+                <label for="picsumId">Picsum id:</label>
+                <output id="selected">25</output>
+                <br />
+                <input type="range" id="picsumId" value="25" min="1" max="50" step="1" oninput="selected.value =  picsumId.value" />
+            </p>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script>
+            const _0x3c8c = ["13MhCqqm", "2TSDSEm", "1ImfpRF", "1044235qyDlOA", "https://picsum.photos/id/", "change", "344227tcgQic", "1102511vFfNwW", "fadeIn", "#picsumId", "src", "prop", "/600/600", "44087IUMwjf", "1148688mLECdB", "1aASFMU", "disabled", "1322187ayoZeW", "101939fkprZy", "#polaroid\x20img", "hide"];
+
+            function _0x4620(_0x784a00, _0x4025c6) {
+                _0x784a00 = _0x784a00 - 0x97;
+                let _0x3c8c28 = _0x3c8c[_0x784a00];
+                return _0x3c8c28;
+            }
+
+            const _0x3511ee = _0x4620;
+            (function(_0x470be9, _0x426f38) {
+                const _0x42334d = _0x4620;
+                while (!![]) {
+                    try {
+                        const _0x392dc5 = parseInt(_0x42334d(0x9f)) * -parseInt(_0x42334d(0x9b)) + parseInt(_0x42334d(0xa4)) * parseInt(_0x42334d(0x98)) + parseInt(_0x42334d(0x97)) + parseInt(_0x42334d(0xab)) * parseInt(_0x42334d(0x9e)) + parseInt(_0x42334d(0xa0)) * -parseInt(_0x42334d(0xa1)) + parseInt(_0x42334d(0xa5)) + -parseInt(_0x42334d(0x9a));
+                        if (_0x392dc5 === _0x426f38) break; else _0x470be9["push"](_0x470be9["shift"]());
+                    } catch (_0x206fef) {
+                        _0x470be9["push"](_0x470be9["shift"]());
+                    }
+                }
+            }(_0x3c8c, 0x920f1));
+            const slider = $(_0x3511ee(0xa7)), image = $(_0x3511ee(0x9c));
+            slider[_0x3511ee(0xa3)](function() {
+                const _0x98bb15 = _0x3511ee;
+                slider[_0x98bb15(0xa9)](_0x98bb15(0x99), !![]), image[_0x98bb15(0x9d)]();
+                const _0x4fe56f = slider["val"]();
+                image["attr"](_0x98bb15(0xa8), _0x98bb15(0xa2) + _0x4fe56f + _0x98bb15(0xaa)), image[_0x98bb15(0xa6)](0xfa0, function() {
+                    const _0x3099e6 = _0x98bb15;
+                    slider[_0x3099e6(0xa9)]("disabled", ![]);
+                });
+            });
+        </script>
+    </body>
+</html>

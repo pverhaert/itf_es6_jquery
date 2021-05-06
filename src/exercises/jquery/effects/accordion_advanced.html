@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Accordion</title>
+        <title>Accordion (advanced)</title>
         <style>
             .block h3 {
                 background-color: black;
@@ -68,7 +68,7 @@
                     </p>
                 </div>
             </div>
-            <!--<div class="block">
+            <div class="block">
                 <h3>Daffodil</h3>
                 <div data-id="daffodil">
                     <img src="../../../assets/flowers/daffodil.jpg" />
@@ -80,25 +80,21 @@
                         contrasting coloured tepals and corona.
                     </p>
                 </div>
-            </div>-->
+            </div>
             <hr />
             <div class="border-gray">
                 <ul>
-                    <li>Examine the source code to see how the accordion blocks (<code>&lt;div class="block"&gt;</code>) are organized</li>
                     <li>
-                        Add a click event listener to the <code>h3</code> tags:
+                        Adjust the script code of the basic accordion exercise such that exactly 1 accordion/information block is open/shown
+                        (at all times)
                         <ul>
+                            <li>When the page is loaded, the first accordion/information block is open/shown (by default)</li>
                             <li>
-                                When you click on a <code>h3</code>, the corresponding information (the <code>div</code> with the image and
-                                the paragraph) is shown (when it's not visible) or hidden (when it is visible) with a sliding motion<br />
+                                When an another accordion block (that is, its <code>h3</code>) is clicked, all information blocks are hidden
+                                and the clicked information block is shown (with a sliding motion).
                             </li>
+                            <li>Make sure that nothing happens when you click on the accordion block that is currently open</li>
                         </ul>
-                    </li>
-                    <li>
-                        Make sure that your script still works if similar, additional accordion blocks are added (uncomment the lines 71-83
-                        in <i>accordion.html</i>)<br />
-                        Tip: use the resemblance between the <code>h3</code>'s and the <code>data-id</code> attributes to determine which
-                        information should be shown/hidden
                     </li>
                 </ul>
             </div>

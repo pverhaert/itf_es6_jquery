@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Accordion</title>
+        <title>Picsum photo gallery (advanced)</title>
         <style>
             #gallery {
                 display: flex;
@@ -38,6 +38,41 @@
         <main class="container">
             <h1>Picsum photo gallery (advanced)</h1>
             <div id="gallery"></div>
+            <div class="border-gray">
+                <ul>
+                    <li>
+                        Use a loop to add the first 50 picsum photos to <code>div#gallery</code> in the following way:
+                        <ul>
+                            <li>
+                                Use a <code>div</code> per image, enclosing
+                                <ul>
+                                    <li>a <code>span</code> (with the picsum id of the photo as text)</li>
+                                    <li>
+                                        an <code>img</code> tag (with <code>src="https://picsum.photos/id/200/200"</code> where
+                                        <code>id</code>
+                                        is the picsum id of the photo)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                If you look at the style rules in <i>picsum_gallery_advanced.html</i>, you notice that these
+                                <code>span</code>'s have the same size as their enclosing <code>div</code>'s, and they are absolutely
+                                positioned behind (<code>z-index: -1</code>) the images within the <code>div</code>'s
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Change the <code>opacity</code> of all the images to <code>0.25</code>. As this makes the images partially
+                        transparant, the <code>span</code>'s (with the picsum id's) are now visible through the images.
+                    </li>
+                    <li>
+                        When you hover over an image, its opacity is gradually (over a time period of 50ms) increased to <code>1</code>,
+                        making the image fully opaque. The <code>span</code>'s (with the picsum id's) don't shine through the images
+                        anymore.<br />When your mouse leaves the image, its opacity is gradually decreased to <code>0.25</code> again (also
+                        taking 50ms). The <code>span</code>'s (with the picsum id's) become visible through the images again.
+                    </li>
+                </ul>
+            </div>
             <hr />
             <pre data-src="picsum_gallery_advanced.js"></pre>
         </main>
