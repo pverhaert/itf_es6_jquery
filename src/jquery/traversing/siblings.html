@@ -11,19 +11,15 @@
                 font-family: Menlo, Consolas, monospace;
             }
             .border-green {
-                display: block;
-            }
-            article,
-            article * {
-                padding: 0.5rem;
-                margin: 0.5rem;
-                border: 1px solid lightgray;
-            }
-            div {
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
                 align-items: center;
+            }
+            .border-green span {
+                padding: 0.5rem;
+                margin: 0.5rem;
+                border: 1px solid lightgray;
             }
             #start {
                 font-weight: bold;
@@ -47,42 +43,37 @@
                         <option>.prev().addBack()</option>
                         <option>.prevAll()</option>
                         <option>.prevAll().addBack()</option>
-                        <option>.prevAll(':nth-child(2)')</option>
                         <option>.prevAll(':nth-child(odd)')</option>
+                        <option>.prevAll(':nth-child(2)')</option>
                         <option>.prevUntil(':first-child')</option>
+                        <option>.prevUntil(':nth-child(2)')</option>
                     </optgroup>
                     <optgroup label="right siblings">
                         <option>.next()</option>
                         <option>.next().addBack()</option>
                         <option>.nextAll()</option>
                         <option>.nextAll().addBack()</option>
-                        <option>.nextAll(':nth-child(8)')</option>
                         <option>.nextAll(':nth-child(odd)')</option>
+                        <option>.nextAll(':nth-child(8)')</option>
                         <option>.nextUntil(':last-child')</option>
+                        <option>.nextUntil(':nth-child(8)')</option>
                     </optgroup>
                     <optgroup label="left and right siblings">
                         <option>.siblings()</option>
-                        <option>.siblings(':nth-child(odd)')</option>
+                        <option>.siblings().addBack()</option>
                         <option>.siblings(':nth-child(even)')</option>
+                        <option>.siblings(':nth-child(2n)')</option>
+                        <option>.siblings(':nth-child(odd)')</option>
+                        <option>.siblings(':nth-child(2n+1)')</option>
                         <option>.siblings(':nth-child(even)').addBack()</option>
                     </optgroup>
                 </select>
             </div>
             <hr />
-            <pre id="result">aaa</pre>
+            <pre id="result"></pre>
             <div class="border-green">
-                <span>div.border-green</span>
-                <article>
-                    article
-                    <section>
-                        section
-                        <div id="div1">
-                            #div1
-                            <span>span</span><span>span</span><span>span</span><span>span</span><span id="start">span#start</span
-                            ><span>span</span><span>span</span><span>span</span><span>span</span>
-                        </div>
-                    </section>
-                </article>
+                <span>span1</span><span>span2</span><span>span3</span><span>span4</span><span id="start">span5#start</span><span>span6</span
+                ><span>span7</span><span>span8</span><span>span9</span>
             </div>
         </main>
         <tmk-footer></tmk-footer>

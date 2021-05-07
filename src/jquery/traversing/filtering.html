@@ -5,28 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/course.css" />
         <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
-        <title>Traversing children end descendants</title>
+        <title>Filtering</title>
         <style>
             select {
                 font-family: Menlo, Consolas, monospace;
             }
             .border-green {
-                display: block;
-            }
-            article,
-            article * {
-                padding: 0.5rem;
-                margin: 0.5rem;
-                border: 1px solid lightgray;
-            }
-            div {
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
                 align-items: center;
             }
-            #start {
-                font-weight: bold;
+            .border-green span {
+                padding: 0.5rem;
+                margin: 0.5rem;
+                border: 1px solid lightgray;
             }
             .selected {
                 background-color: rgba(255, 160, 122, 0.2);
@@ -38,47 +31,48 @@
     <body>
         <tmk-navbar active="jq"></tmk-navbar>
         <main class="container">
-            <h1>Traversing children end descendants</h1>
+            <h1>Filtering</h1>
             <div class="border-gray">
                 <label for="travers">Examples:</label>
                 <select name="travers" id="travers">
-                    <option>.find('article')</option>
-                    <option>.find('article').addBack()</option>
-                    <option>.find('div')</option>
-                    <option>.find('#div1, #start')</option>
-                    <option>.find('span:nth-of-type(2n)')</option>
-                    <option>.find('span:nth-of-type(2n+1)')</option>
-                    <option>.find('span, div, article')</option>
-                    <option>.children()</option>
-                    <option>.children('article')</option>
-                    <option>.children('span')</option>
+                    <optgroup label="filter()">
+                        <option></option>
+                        <option>.filter(':first-of-type')</option>
+                        <option>.filter(':last-of-type')</option>
+                        <option>.filter(':even')</option>
+                        <option>.filter(':odd')</option>
+                        <option>.filter(':nth-of-type(3)')</option>
+                        <option>.filter(':not(:first-of-type)')</option>
+                        <option>.filter(':nth-of-type(3), :nth-of-type(4)')</option>
+                    </optgroup>
+                    <optgroup label="shorthands">
+                        <option>.first()</option>
+                        <option>.last()</option>
+                        <option>.even()</option>
+                        <option>.odd()</option>
+                        <option>.eq(2)</option>
+                        <option>.not(':first-of-type')</option>
+                        <option>.slice(2,4)</option>
+                    </optgroup>
                 </select>
             </div>
             <hr />
             <pre id="result"></pre>
             <div class="border-green">
-                <span>div.border-green</span>
-                <article>
-                    article
-                    <section>
-                        section
-                        <div id="div1">
-                            #div1
-                            <span>span</span><span>span</span><span>span</span><span>span</span><span id="start">span#start</span
-                            ><span>span</span><span>span</span><span>span</span><span>span</span>
-                        </div>
-                    </section>
-                </article>
+                <span>span1</span><span>span2</span><span>span3</span><span>span4</span><span>span5</span><span>span6</span
+                ><span>span7</span><span>span8</span><span>span9</span>
             </div>
         </main>
         <tmk-footer></tmk-footer>
         <script type="module" src="../../js/app.js"></script>
         <script src="../../js/jquery.min.js"></script>
         <script>
+            // $('span').eq(2).addClass('selected');
             $('#travers')
                 .change(function () {
                     $('*').removeClass('selected');
-                    const code = `$('.border-green')${$(this).find(':selected').text()}.addClass('selected');`;
+                    const code = `$('.border-green span')${$(this).find(':selected').text()}.addClass('selected');`;
+                    console.log(code);
                     document.getElementById('result').textContent = code;
                     eval(code);
                 })

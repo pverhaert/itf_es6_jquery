@@ -13,6 +13,9 @@
             .border-green {
                 display: block;
             }
+            article {
+                position: relative; /* just to demonstrate offsetParent() */
+            }
             article,
             article * {
                 padding: 0.5rem;
@@ -54,10 +57,13 @@
                     <option>.parents()</option>
                     <option>.parents('div')</option>
                     <option>.parents('div').addBack()</option>
+                    <option>.parentsUntil('.border-green')</option>
+                    <option>.offsetParent()</option>
+                    <option>.offsetParent().addBack()</option>
                 </select>
             </div>
             <hr />
-            <pre id="result">aaa</pre>
+            <pre id="result"></pre>
             <div class="border-green">
                 <span>div.border-green</span>
                 <article>
