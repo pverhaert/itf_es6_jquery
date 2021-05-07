@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Accordion</title>
+        <style>
+            .block h3 {
+                background-color: black;
+                color: white;
+                padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+                margin: 1rem 0 0 0;
+            }
+
+            .block img {
+                float: right;
+                margin: 0.5rem;
+            }
+
+            .block div {
+                border: 1px solid #000;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Accordion (advanced)</h1>
+            <div class="block">
+                <h3>Rose</h3>
+                <div data-id="rose">
+                    <img src="../../../assets/flowers/rose.jpg" />
+                    <p>
+                        A rose is a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears. There
+                        are over three hundred species and tens of thousands of cultivars. They form a group of plants that can be erect
+                        shrubs, climbing, or trailing, with stems that are often armed with sharp prickles. Flowers vary in size and shape
+                        and are usually large and showy, in colours ranging from white through yellows and reds.
+                    </p>
+                </div>
+            </div>
+            <div class="block">
+                <h3>Tulip</h3>
+                <div data-id="tulip">
+                    <img src="../../../assets/flowers/tulip.jpg" />
+                    <p>
+                        Tulips (Tulipa) form a genus of spring-blooming perennial herbaceous bulbiferous geophytes (having bulbs as storage
+                        organs). The flowers are usually large, showy and brightly colored, generally red, pink, yellow, or white (usually
+                        in warm colors). They often have a different colored blotch at the base of the tepals (petals and sepals,
+                        collectively), internally. Because of a degree of variability within the populations, and a long history of
+                        cultivation, classification has been complex and controversial.
+                    </p>
+                </div>
+            </div>
+            <div class="block">
+                <h3>Carnation</h3>
+                <div data-id="carnation">
+                    <img src="../../../assets/flowers/carnation.jpg" />
+                    <p>
+                        Dianthus caryophyllus, commonly known as the carnation or clove pink, is a species of Dianthus. It is probably
+                        native to the Mediterranean region but its exact range is unknown due to extensive cultivation for the last 2,000
+                        years. Carnations require well-drained, neutral to slightly alkaline soil, and full sun. Numerous cultivars have
+                        been selected for garden planting. Typical examples include 'Gina Porto', 'Helen', 'Laced Romeo', and 'Red Rocket'.
+                        They are used for medical purposes, such as for upset stomach and fever. Their fragrance was historically used for
+                        vinegar, beer, wine, sauces and salads.
+                    </p>
+                </div>
+            </div>
+            <div class="block">
+                <h3>Daffodil</h3>
+                <div data-id="daffodil">
+                    <img src="../../../assets/flowers/daffodil.jpg" />
+                    <p>
+                        Narcissus is a genus of predominantly spring flowering perennial plants of the amaryllis family, Amaryllidaceae.
+                        Various common names including daffodil, narcissus and jonquil are used to describe all or some members of the
+                        genus. Narcissus has conspicuous flowers with six petal-like tepals surmounted by a cup- or trumpet-shaped corona.
+                        The flowers are generally white and yellow (also orange or pink in garden varieties), with either uniform or
+                        contrasting coloured tepals and corona.
+                    </p>
+                </div>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script>
+            const _0x5997 = [
+                'show',
+                '1ijVLTz',
+                'text',
+                'display',
+                'click',
+                'div[data-id=',
+                'target',
+                '2SPVeGB',
+                '4xBdfIG',
+                'toLowerCase',
+                'slideDown',
+                '344368fiDaQR',
+                'hide',
+                '667626uKvNFP',
+                '277411tXSylO',
+                'slideUp',
+                '61518tinQGI',
+                'block',
+                '828882yHtfzv',
+                '.block:first-of-type\x20div',
+                '114020OOSArl',
+                '295969NVyDPQ',
+            ];
+
+            function _0x229d(_0x13bcc6, _0x5920fe) {
+                _0x13bcc6 = _0x13bcc6 - 0xf6;
+                let _0x59978e = _0x5997[_0x13bcc6];
+                return _0x59978e;
+            }
+
+            const _0x4562bf = _0x229d;
+            (function (_0x477a32, _0x2676fe) {
+                const _0x2fd1e2 = _0x229d;
+                while (!![]) {
+                    try {
+                        const _0x5223be =
+                            -parseInt(_0x2fd1e2(0x107)) * parseInt(_0x2fd1e2(0xfb)) +
+                            -parseInt(_0x2fd1e2(0x102)) * parseInt(_0x2fd1e2(0xf8)) +
+                            parseInt(_0x2fd1e2(0x105)) +
+                            -parseInt(_0x2fd1e2(0x108)) +
+                            parseInt(_0x2fd1e2(0x10a)) +
+                            parseInt(_0x2fd1e2(0xf6)) +
+                            -parseInt(_0x2fd1e2(0x101)) * -parseInt(_0x2fd1e2(0xf9));
+                        if (_0x5223be === _0x2676fe) break;
+                        else _0x477a32['push'](_0x477a32['shift']());
+                    } catch (_0x83cacc) {
+                        _0x477a32['push'](_0x477a32['shift']());
+                    }
+                }
+            })(_0x5997, 0x67e75);
+            const allDivs = $('.block\x20div');
+            allDivs[_0x4562bf(0x106)](),
+                $(_0x4562bf(0xf7))[_0x4562bf(0xfa)](),
+                $('h3')[_0x4562bf(0xfe)]((_0x5cfbb9) => {
+                    const _0xc6fad9 = _0x4562bf,
+                        _0x49d888 = $(_0x5cfbb9[_0xc6fad9(0x100)])[_0xc6fad9(0xfc)]()[_0xc6fad9(0x103)](),
+                        _0x5c399e = $(_0xc6fad9(0xff) + _0x49d888 + ']');
+                    _0x5c399e['css'](_0xc6fad9(0xfd)) !== _0xc6fad9(0x10b) && (allDivs[_0xc6fad9(0x109)](), _0x5c399e[_0xc6fad9(0x104)]());
+                });
+        </script>
+    </body>
+</html>
