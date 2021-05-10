@@ -40,19 +40,21 @@
                 <br />
                 <input type="range" id="picsumId" value="25" min="1" max="50" step="1" oninput="selected.value =  picsumId.value" />
             </p>
-            </div>
             <div class="border-gray">
                 <ul>
-                    <li>Add a <code>change</code> event listener to the slider
+                    <li>
+                        Add a <code>change</code> event listener to the slider
                         <ul>
                             <li>Hide the current image (the "polaroid" becomes black)</li>
-                            <li>Change the <code>src</code> attribute of the image to <code>https://picsum.photos/id/600/600</code> with
+                            <li>
+                                Change the <code>src</code> attribute of the image to <code>https://picsum.photos/id/600/600</code> with
                                 <code>id</code> the value of the slider
                             </li>
                             <li>Let the new image fade in over a time period of 4s</li>
                         </ul>
                     </li>
-                    <li>Make this a 2-star exercise by disabling the slider until the fading effect is finished <br>
+                    <li>
+                        Make this a 2-star exercise by disabling the slider until the fading effect is finished <br />
                         TIP: change the attribute/property <code>disabled</code> and use a callback function (which is executed when the
                         effect is completed) as the second parameter in the
                         <a href="https://api.jquery.com/fadeIn/#fadeIn-duration-complete"><code>fadeIn()</code></a> method
