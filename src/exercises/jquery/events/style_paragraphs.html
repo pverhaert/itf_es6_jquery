@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Style the paragraphs</title>
+        <style>
+            .item {
+                margin-bottom: 2rem;
+            }
+
+            label[for='font'], label[for='bold'] {
+                font-weight: bold;
+            }
+
+            label[for='small'] {
+                font-size: 12px;
+            }
+
+            label[for='large'] {
+                font-size: 24px;
+            }
+
+            label[for='italic'] {
+                font-style: italic;
+            }
+
+            option[value="Times New Roman"] {
+                font-family: "Times New Roman", serif;
+            }
+
+            option[value="Arial"] {
+                font-family: Arial, sans-serif;
+            }
+
+            option[value="Verdana"] {
+                font-family: Verdana, sans-serif;
+            }
+
+            input {
+                margin: 0 !important;
+            }
+
+            #paragraphs {
+                border-left: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Style the paragraphs</h1>
+            <div class="row">
+                <div class="col-sm-12 col-lg-4" id="inputs">
+                    <p class="item">
+                        <label for="font">Font:</label>
+                        <select id="font" size="1">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </p>
+                    <fieldset class="item">
+                        <legend>Font size:</legend>
+                        <p>
+                            <input type="radio" id="small" name="fontsize" value="12px">
+                            <label for="small">Small (12px)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="medium" name="fontsize" value="16px" checked>
+                            <label for="medium">Medium (16px)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="large" name="fontsize" value="24px">
+                            <label for="large">Large (24px)</label>
+                        </p>
+                    </fieldset>
+                    <div class="item">
+                        <p>
+                            <input type="checkbox" id="bold">
+                            <label for="bold">Bold</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="italic">
+                            <label for="italic">Italic</label>
+                        </p>
+                    </div>
+                    <div class="item">
+                        <button>Dark theme</button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-offset-1 col-lg-7" id="paragraphs">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis consequuntur dolorem, ex hic in magni
+                        rem ullam! Deleniti obcaecati tempora veritatis voluptates voluptatibus. Consequuntur nostrum sapiente voluptatibus!
+                        In, unde!</p>
+                    <p>Adipisci aspernatur cumque distinctio error numquam
+                        officiis, perferendis provident quaerat ratione suscipit? Asperiores atque autem blanditiis deserunt doloremque
+                        dolorum, eaque eum eveniet, exercitationem fugit id ipsum laborum laudantium maiores mollitia necessitatibus nemo
+                        odit pariatur repellendus soluta suscipit temporibus veniam. Fuga, repellendus, voluptatibus.</p>
+                    <p>Ab error eum quas rem soluta? Accusamus accusantium amet consequuntur cumque delectus doloribus eaque enim excepturi
+                        facere fugiat labore maiores nemo non obcaecati porro quae reprehenderit, vitae voluptatibus. Esse ipsum sequi
+                        voluptates?</p>
+                </div>
+            </div>
+            </div>
+            <div class="border-gray">
+                <ul>
+                    <li>Add the necessary event listeners to the input elements to style the paragraphs in
+                        <code>div#paragraphs</code>
+                        <ul>
+                            <li>If you select a font, the resulting font-family (with fallback font) should be applied to these paragraphs
+                                <br>(Make sure that after reloading the page, the correct font-family, i.e. Arial, is applied without adding
+                                additional CSS)
+                            </li>
+                            <li>When selecting a font size, it should be applied to the paragraphs</li>
+                            <li>When ticking the checkbox 'Bold', the paragraphs are shown in bold. Likewise for the checkbox 'Italic'.
+                            </li>
+                            <li>When you click the button 'Dark theme', the background color of the paragraphs (and the enclosing
+                                <code>div#paragraphs</code>) becomes <code>#111</code>,
+                                and the color becomes
+                                <code>#f8f8f8</code>. The text on the button changes to 'Light theme'. <br>
+                                When the button (now with text 'Light theme') is clicked again, the background color and color of these
+                                paragraphs are reset to the original values, i.e., <code>#f8f8f8</code> and <code>#111</code> respectively.
+                                The text on the button is
+                                changed back to 'Dark theme'.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <hr />
+            <pre data-src="style_paragraphs.js"></pre>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script src="style_paragraphs.js"></script>
+    </body>
+</html>

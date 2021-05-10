@@ -22,3 +22,7 @@ img {
 table:not(.horizontal) {
     max-height: none;
 }
+
+.collapse > :checked + label + div {
+    max-height: 450px;
+}

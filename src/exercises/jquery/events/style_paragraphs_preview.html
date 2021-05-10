@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/course.css" />
+        <meta name="description" content="JavaScript (ES6) - jQuery Course of the IT Factory @ Thomas More Kempen" />
+        <title>Style the paragraphs</title>
+        <style>
+            .item {
+                margin-bottom: 2rem;
+            }
+
+            label[for='font'],
+            label[for='bold'] {
+                font-weight: bold;
+            }
+
+            label[for='small'] {
+                font-size: 12px;
+            }
+
+            label[for='large'] {
+                font-size: 24px;
+            }
+
+            label[for='italic'] {
+                font-style: italic;
+            }
+
+            option[value='Times New Roman'] {
+                font-family: 'Times New Roman', serif;
+            }
+
+            option[value='Arial'] {
+                font-family: Arial, sans-serif;
+            }
+
+            option[value='Verdana'] {
+                font-family: Verdana, sans-serif;
+            }
+
+            input {
+                margin: 0 !important;
+            }
+
+            #paragraphs {
+                border-left: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <tmk-navbar active="ex"></tmk-navbar>
+        <main class="container">
+            <h1>Style the paragraphs</h1>
+            <div class="row">
+                <div class="col-sm-12 col-lg-4" id="inputs">
+                    <p class="item">
+                        <label for="font">Font:</label>
+                        <select id="font" size="1">
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </p>
+                    <fieldset class="item">
+                        <legend>Font size:</legend>
+                        <p>
+                            <input type="radio" id="small" name="fontsize" value="12px" />
+                            <label for="small">Small (12px)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="medium" name="fontsize" value="16px" checked />
+                            <label for="medium">Medium (16px)</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="large" name="fontsize" value="24px" />
+                            <label for="large">Large (24px)</label>
+                        </p>
+                    </fieldset>
+                    <div class="item">
+                        <p>
+                            <input type="checkbox" id="bold" />
+                            <label for="bold">Bold</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="italic" />
+                            <label for="italic">Italic</label>
+                        </p>
+                    </div>
+                    <div class="item">
+                        <button>Dark theme</button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-offset-1 col-lg-7" id="paragraphs">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis consequuntur dolorem, ex hic in magni
+                        rem ullam! Deleniti obcaecati tempora veritatis voluptates voluptatibus. Consequuntur nostrum sapiente voluptatibus!
+                        In, unde!
+                    </p>
+                    <p>
+                        Adipisci aspernatur cumque distinctio error numquam officiis, perferendis provident quaerat ratione suscipit?
+                        Asperiores atque autem blanditiis deserunt doloremque dolorum, eaque eum eveniet, exercitationem fugit id ipsum
+                        laborum laudantium maiores mollitia necessitatibus nemo odit pariatur repellendus soluta suscipit temporibus veniam.
+                        Fuga, repellendus, voluptatibus.
+                    </p>
+                    <p>
+                        Ab error eum quas rem soluta? Accusamus accusantium amet consequuntur cumque delectus doloribus eaque enim excepturi
+                        facere fugiat labore maiores nemo non obcaecati porro quae reprehenderit, vitae voluptatibus. Esse ipsum sequi
+                        voluptates?
+                    </p>
+                </div>
+            </div>
+        </main>
+        <tmk-footer></tmk-footer>
+        <script type="module" src="../../../js/app.js"></script>
+        <script src="../../../js/jquery.min.js"></script>
+        <script>
+            const _0x32be = [
+                'Light\x20theme',
+                'font-style',
+                '895177viPKHT',
+                'serif',
+                'checked',
+                'click',
+                'font-weight',
+                '#f8f8f8',
+                '#inputs\x20select',
+                'font-size',
+                'target',
+                '#inputs\x20input[type=\x22radio\x22]',
+                '23368NaqrHg',
+                '1IbsHbc',
+                '#111',
+                'prop',
+                'italic',
+                '841613dZYuxu',
+                '377157YnEmWk',
+                '3OUAZUQ',
+                'change',
+                'text',
+                '#paragraphs',
+                'Times\x20New\x20Roman',
+                '526890XgRlJy',
+                '185KAihWH',
+                'val',
+                'bold',
+                'Dark\x20theme',
+                '#paragraphs\x20p',
+                '7cIeorY',
+                '#inputs\x20#bold',
+                '945229TDQBkp',
+                'font-family',
+                '6059KNByuc',
+                'background-color',
+                '#inputs\x20#italic',
+                'css',
+            ];
+
+            function _0x5ba9(_0x4f9684, _0x1a07b4) {
+                _0x4f9684 = _0x4f9684 - 0x12a;
+                let _0x32be3b = _0x32be[_0x4f9684];
+                return _0x32be3b;
+            }
+
+            const _0x4fd9b7 = _0x5ba9;
+            (function (_0x24126f, _0x454b97) {
+                const _0x1d2533 = _0x5ba9;
+                while (!![]) {
+                    try {
+                        const _0x46def0 =
+                            parseInt(_0x1d2533(0x149)) * parseInt(_0x1d2533(0x12e)) +
+                            -parseInt(_0x1d2533(0x143)) * -parseInt(_0x1d2533(0x13a)) +
+                            parseInt(_0x1d2533(0x141)) +
+                            parseInt(_0x1d2533(0x12d)) * parseInt(_0x1d2533(0x13f)) +
+                            -parseInt(_0x1d2533(0x132)) +
+                            -parseInt(_0x1d2533(0x133)) * parseInt(_0x1d2533(0x134)) +
+                            -parseInt(_0x1d2533(0x139));
+                        if (_0x46def0 === _0x454b97) break;
+                        else _0x24126f['push'](_0x24126f['shift']());
+                    } catch (_0x586a8b) {
+                        _0x24126f['push'](_0x24126f['shift']());
+                    }
+                }
+            })(_0x32be, 0x9891b),
+                (pars = $(_0x4fd9b7(0x13e))),
+                $(_0x4fd9b7(0x140))['change']((_0xda3fda) => {
+                    const _0x4d200a = _0x4fd9b7;
+                    $(_0xda3fda[_0x4d200a(0x12b)])['prop'](_0x4d200a(0x14b)) === !![]
+                        ? pars[_0x4d200a(0x146)](_0x4d200a(0x14d), _0x4d200a(0x13c))
+                        : pars[_0x4d200a(0x146)](_0x4d200a(0x14d), '');
+                }),
+                $(_0x4fd9b7(0x145))[_0x4fd9b7(0x135)]((_0x3f3ad2) => {
+                    const _0x5dc043 = _0x4fd9b7;
+                    $(_0x3f3ad2['target'])[_0x5dc043(0x130)]('checked') === !![]
+                        ? pars[_0x5dc043(0x146)](_0x5dc043(0x148), _0x5dc043(0x131))
+                        : pars['css'](_0x5dc043(0x148), '');
+                }),
+                $(_0x4fd9b7(0x12c))[_0x4fd9b7(0x135)]((_0x937bf6) => {
+                    const _0x54b693 = _0x4fd9b7;
+                    pars[_0x54b693(0x146)](_0x54b693(0x12a), $(_0x937bf6[_0x54b693(0x12b)])[_0x54b693(0x13b)]());
+                }),
+                $(_0x4fd9b7(0x14f))
+                    [_0x4fd9b7(0x135)]((_0x4610b4) => {
+                        const _0x2a1a6e = _0x4fd9b7,
+                            _0x5e3124 = $(_0x4610b4['target'])[_0x2a1a6e(0x13b)]();
+                        let _0x5df593 = 'sans-serif';
+                        _0x5e3124 === _0x2a1a6e(0x138) && (_0x5df593 = _0x2a1a6e(0x14a)),
+                            pars['css'](_0x2a1a6e(0x142), _0x5e3124 + ',\x20' + _0x5df593);
+                    })
+                    [_0x4fd9b7(0x135)](),
+                $('#inputs\x20button')[_0x4fd9b7(0x14c)]((_0x471426) => {
+                    const _0x1b6111 = _0x4fd9b7;
+                    $(_0x471426[_0x1b6111(0x12b)])[_0x1b6111(0x136)]() === 'Dark\x20theme'
+                        ? ($(_0x471426[_0x1b6111(0x12b)])['text'](_0x1b6111(0x147)),
+                          pars['css']({
+                              backgroundColor: '#111',
+                              color: _0x1b6111(0x14e),
+                          }),
+                          $(_0x1b6111(0x137))['css'](_0x1b6111(0x144), _0x1b6111(0x12f)))
+                        : ($(_0x471426[_0x1b6111(0x12b)])['text'](_0x1b6111(0x13d)),
+                          pars[_0x1b6111(0x146)](_0x1b6111(0x144), _0x1b6111(0x14e))[_0x1b6111(0x146)]('color', _0x1b6111(0x12f)),
+                          $('#paragraphs')[_0x1b6111(0x146)](_0x1b6111(0x144), _0x1b6111(0x14e)));
+                });
+        </script>
+    </body>
+</html>
