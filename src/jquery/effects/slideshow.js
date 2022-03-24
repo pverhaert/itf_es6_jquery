@@ -11,7 +11,11 @@ function loop() {
     currentImg = nextImg;
     // figure slideUp() -> replace the image -> wait 500ms -> slideDown()
     $('figure').slideUp(1000, function () {
-        $(this).empty().append(`<img src="https://picsum.photos/id/${currentImg}/600/400">`).delay(500).slideDown(1000);
+        $(this)
+            .empty()
+            .append(`<img src="https://picsum.photos/id/${currentImg}/600/400" alt="image ${currentImg}">`)
+            .delay(500)
+            .slideDown(1000);
     });
 }
 

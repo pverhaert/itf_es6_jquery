@@ -1,7 +1,7 @@
 {
   "name": "itf_es6_jquery",
   "version": "1.0.0",
-  "description": "Course JavaScript jQuery 20-21",
+  "description": "Course JavaScript jQuery 1ITF",
   "main": "src/index.html",
   "author": {
     "name": "Patrick Verhaert",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/owner/itf_es6_jquery.git"
+    "url": "https://github.com/pverhaert/itf_es6_jquery.git"
   },
   "bugs": {
-    "url": "https://github.com/owner/itf_es6_jquery/issues"
+    "url": "https://github.com/pverhaert/itf_es6_jquery/issues"
   },
-  "homepage": "https://github.com/owner/itf_es6_jquery#readme",
+  "homepage": "https://github.com/pverhaert/itf_es6_jquery#readme",
   "license": "MIT",
   "keywords": [],
   "scripts": {

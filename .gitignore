@@ -1,7 +1,6 @@
 .DS_Store
-.vscode
 .idea
+.vscode
 node_modules
 dist
 solutions
-package-lock.json
