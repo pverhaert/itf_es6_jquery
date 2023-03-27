@@ -1,26 +1,25 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
 
 // Needed for development (gulp)
-const browserSync = require('browser-sync').create();
-const plumber = require('gulp-plumber');
-const notify = require('gulp-notify');
-const newer = require('gulp-newer');
-const sass = require('gulp-dart-sass');
-const prefix = require('gulp-autoprefixer');
-const sourcemaps = require('gulp-sourcemaps');
-const postcss = require('gulp-postcss');
-const mqpacker = require('@lipemat/css-mqpacker');
+import browserSync from 'browser-sync';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import newer from 'gulp-newer';
+import sass from 'gulp-dart-sass';
+import prefix from 'gulp-autoprefixer';
+import sourcemaps from 'gulp-sourcemaps';
+import gcmqp from 'gulp-css-mqpacker';
 
 // Needed for production (gulp build)
-const del = require('del');
-const fs = require('fs');
-const realFavicon = require('gulp-real-favicon');
-const imagemin = require('gulp-imagemin');
-const minify = require('gulp-minifier');
-const concat = require('gulp-concat');
+import { deleteAsync } from 'del';
+import fs from 'fs';
+import realFavicon from 'gulp-real-favicon';
+import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
+import minify from 'gulp-minifier';
+import concat from 'gulp-concat';
 
 // Needed for PWA production (gulp build:pwa)
-const workboxBuild = require('workbox-build');
+import workboxBuild from 'workbox-build';
 
 // Live-reload the browser
 gulp.task('browser-sync', () => {
@@ -40,51 +39,44 @@ gulp.task('browser-sync', () => {
 });
 
 // Copy prism and jQuery JS-files
-gulp.task('copy-js', () => {
-    return gulp
+gulp.task('copy-js', () =>
+    gulp
         .src([
             'node_modules/prismjs/prism.js',
             'node_modules/prismjs/plugins/file-highlight/prism-file-highlight.min.js',
             'node_modules/jquery/dist/jquery.min.js',
         ])
         .pipe(newer('./src/js'))
-        .pipe(notify({ message: 'Copy JS files' }))
-        .pipe(gulp.dest('./src/js'));
-});
+        .pipe(notify({message: 'Copy JS files'}))
+        .pipe(gulp.dest('./src/js'))
+);
 
 // Compile sass into CSS (/src/css/)
-gulp.task('sass', () => {
-    const processors = [mqpacker({ sort: true })];
-    return (
-        gulp
-            .src('./scss/**/*.scss')
-            .pipe(
-                plumber({
-                    errorHandler: notify.onError({
-                        title: 'SASS compile error!',
-                        message: '<%= error.message %>',
-                    }),
-                })
-            )
-            .pipe(sourcemaps.init())
-            // outputStyle: expanded or compressed
-            .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
-            .pipe(prefix('last 2 versions'))
-            .pipe(postcss(processors))
-            .pipe(sourcemaps.write())
-            .pipe(gulp.dest('./src/css'))
-    );
-});
+gulp.task('sass', () =>
+    gulp
+        .src('./scss/**/*.scss')
+        .pipe(
+            plumber({
+                errorHandler: notify.onError({
+                    title: 'SASS compile error!',
+                    message: '<%= error.message %>',
+                }),
+            })
+        )
+        .pipe(sourcemaps.init())
+        // outputStyle: expanded or compressed
+        .pipe(sass.sync({ outputStyle: 'expanded' }).on('error', sass.logError))
+        .pipe(prefix('last 2 versions'))
+        .pipe(gcmqp())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./src/css'))
+);
 
 // Delete all files and folders inside the dist folder
-gulp.task('clean', () => {
-    return del(['dist/**/*']);
-});
+gulp.task('clean', () => deleteAsync(['dist/**/*']));
 
 // Copy files from ./src to ./dist
-gulp.task('copy', () => {
-    return gulp.src('./src/**/*').pipe(gulp.dest('./dist'));
-});
+gulp.task('copy', () => gulp.src('./src/**/*').pipe(gulp.dest('./dist')));
 
 // RealFavIcon config
 const FAVICON = {
@@ -167,21 +159,21 @@ gulp.task('generate-favicon', (cb) => {
 });
 
 // Inject the favicon markup in all your HTML pages
-gulp.task('inject-favicon-markup', () => {
-    return gulp
+gulp.task('inject-favicon-markup', () =>
+    gulp
         .src(['./dist/**/*.html'])
         .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON.dataFile)).favicon.html_code))
-        .pipe(gulp.dest('./dist'));
-});
+        .pipe(gulp.dest('./dist'))
+);
 
 // Concat sw script to app.js
-gulp.task('concatSW', () => {
-    return gulp.src(['./dist/js/app.js', './dist/js/serviceWorker/serviceWorker.js']).pipe(concat('app.js')).pipe(gulp.dest('./dist/js'));
-});
+gulp.task('concatSW', () =>
+    gulp.src(['./dist/js/app.js', './dist/js/serviceWorker/serviceWorker.js']).pipe(concat('app.js')).pipe(gulp.dest('./dist/js'))
+);
 
 // Build service worker
-gulp.task('service-worker', () => {
-    return workboxBuild.generateSW({
+gulp.task('service-worker', () =>
+    workboxBuild.generateSW({
         globDirectory: './dist',
         swDest: './dist/sw.js',
         globPatterns: ['**/*.{html,json,js,css}'],
@@ -205,22 +197,22 @@ gulp.task('service-worker', () => {
                 },
             },
         ],
-    });
-});
+    })
+);
 
 // Minify all files in dist folder
-gulp.task('minify', () => {
-    return gulp
+gulp.task('minify', () =>
+    gulp
         .src('./dist/**/*')
         .pipe(
-            imagemin([
-                imagemin.gifsicle({ interlaced: true }),
-                imagemin.mozjpeg({ quality: 70, progressive: true }),
-                imagemin.optipng({ optimizationLevel: 5, interlaced: true }),
-                imagemin.svgo({
-                    plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-                }),
-            ])
+            imagemin(
+                [
+                    gifsicle({ interlaced: true }),
+                    mozjpeg({ quality: 70, progressive: true }),
+                    optipng({ optimizationLevel: 5, interlaced: true }),
+                ],
+                { verbose: true }
+            )
         )
         .pipe(
             minify({
@@ -233,23 +225,16 @@ gulp.task('minify', () => {
                     minifyCSS: true, // minify inline CSS
                 },
                 minifyJS: {
-                    // sourceMap: false,
+                    sourceMap: true,
                     module: true,
-                    compress: {
-                        unused: false,
-                        keep_classnames: /StoreTabs/i,
-                    },
-                    // mangle: true,
-                    // keep_fnames: false,
-                    // keep_classnames: true,
                 },
                 minifyCSS: true,
             })
         )
-        .pipe(gulp.dest('./dist'));
-});
+        .pipe(gulp.dest('./dist'))
+);
 
-gulp.task('build:pwa', gulp.series('clean', 'copy', 'generate-favicon', 'inject-favicon-markup', 'concatSW', 'service-worker', 'minify'));
+gulp.task('build:pwa', gulp.series('clean',  'copy-js', 'sass', 'copy', 'generate-favicon', 'inject-favicon-markup', 'concatSW', 'service-worker', 'minify'));
 // gulp.task('build', gulp.series('clean', 'copy', 'generate-favicon', 'inject-favicon-markup', 'minify'));
-gulp.task('build', gulp.series('clean', 'copy', 'minify'));
+gulp.task('build', gulp.series('clean', 'copy-js', 'sass', 'copy', 'minify'));
 gulp.task('default', gulp.series('copy-js', 'sass', 'browser-sync'));
